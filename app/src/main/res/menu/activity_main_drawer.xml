@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inicio"
+            android:title="@string/menu_inicio"
+            />
+
+        <item
+            android:id="@+id/navMiCuenta"
+            android:title="@string/menu_micuenta"
+             />
+        <item
+            android:id="@+id/nav_servicioscontratados"
+            android:title="@string/menu_servicioscontratados"
+            />
+        <item
+            android:id="@+id/navcerrarsesion"
+            android:title="@string/menu_cerrarsession"
+             />
+
+    </group>
+</menu>

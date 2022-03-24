@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buttonIngresar">Ingresar</string>
+    <string name="textoOlvideContraseña">ólvide mi contraseña</string>
+    <string name="textoNoTienesCuenta">¿No tienes cuenta?</string>
+    <string name="textoRegistrate">Registrate</string>
+</resources>
