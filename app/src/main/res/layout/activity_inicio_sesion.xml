@@ -25,7 +25,9 @@
         android:hint="@string/login_textoCorreoHint"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
-        android:textColor="#6A6A6A" />
+        android:textColor="#6A6A6A"
+        android:text="Hola"
+        />
 
     <EditText
         android:id="@+id/txtLoginContraseña"
