@@ -35,6 +35,6 @@ public class RegistrarClienteActivity extends AppCompatActivity {
         Log.i("===>", y);
         Log.i("===>", z);
 
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, InicioSesionActivity.class));
     }
 }
