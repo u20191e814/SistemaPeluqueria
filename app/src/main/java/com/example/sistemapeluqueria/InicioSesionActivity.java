@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class InicioSesionActivity extends AppCompatActivity {
 
@@ -17,6 +18,13 @@ public class InicioSesionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_inicio_sesion);
 
         TextView login = this.findViewById(R.id.lblloginRegistrate);
+
+        login .setOnClickListener(c-> {
+            //Toast.makeText(getApplicationContext(), "Remplazar por tu codigo", Toast.LENGTH_LONG)
+            //        .show();
+                startActivity(new Intent(this, RegistrarClienteActivity.class));
+
+        });
         //login.callOnClick(v->
         //{
         //    startActivity(new Intent(this, RegistrarClienteActivity.class));
