@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
 
+import com.example.sistemapeluqueria.ui.InicioFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -19,8 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.ToolbarKt;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+public class MainActivity extends AppCompatActivity   {
+//implements NavigationView.OnNavigationItemSelectedListener
     private AppBarConfiguration mAppBarConfiguration;
 
 
@@ -38,18 +39,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_inicio )
+                R.id.nav_inicio, R.id.navMiCuenta )
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        navigationView.setNavigationItemSelectedListener(this);
 
     }
 
-    @Override
+   // @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
@@ -57,10 +57,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.navcerrarsesion) {
             finish();
             System.exit(0);
+            return false;
+        }
+         else{
+             return  true;
         }
 
-
-        return true;
     }
 
     @Override

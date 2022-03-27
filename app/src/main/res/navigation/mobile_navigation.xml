@@ -10,6 +10,11 @@
         android:name="com.example.sistemapeluqueria.ui.InicioFragment"
         android:label="@string/menu_inicio"
         tools:layout="@layout/fragment_inicio" />
+    <fragment
+        android:id="@+id/navMiCuenta"
+        android:name="com.example.sistemapeluqueria.ui.MiCuentaFragment"
+        android:label="Mi cuenta"
+        tools:layout="@layout/fragment_mi_cuenta" />
 
 
 </navigation>
