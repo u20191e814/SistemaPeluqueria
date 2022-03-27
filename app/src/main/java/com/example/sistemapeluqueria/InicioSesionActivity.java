@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class InicioSesionActivity extends AppCompatActivity {
 
@@ -14,7 +15,15 @@ public class InicioSesionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_sesion);
+
+        TextView login = this.findViewById(R.id.lblloginRegistrate);
+        //login.callOnClick(v->
+        //{
+        //    startActivity(new Intent(this, RegistrarClienteActivity.class));
+
+        //});
     }
+
     public void sesion(View v){
         EditText email = this.findViewById(R.id.txtLoginCorreo);
         EditText clave = this.findViewById(R.id.txtLoginContraseña);
