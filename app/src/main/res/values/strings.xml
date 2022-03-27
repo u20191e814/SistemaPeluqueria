@@ -27,6 +27,13 @@
     <string name="login_textoIngresar">INGRESAR</string>
     <string name="login_textoContraseñaHint">Contraseña</string>
     <string name="login_textoCorreoHint">Correo</string>
+
+    <!-- string mostrar categorias -->
+    <string name="mostrarcategoriasPeinados">Peinados</string>
+    <string name="mostrarcategoriasCortes">Cortes</string>
+    <string name="mostrarcategoriasMaquillaje">Maquillaje</string>
+    <string name="mostrarcategoriasCejas">Cejas</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login">LoginActivity</string>
