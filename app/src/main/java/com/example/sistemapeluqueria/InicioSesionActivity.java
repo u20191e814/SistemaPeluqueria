@@ -16,8 +16,8 @@ public class InicioSesionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_inicio_sesion);
     }
     public void sesion(View v){
-        EditText email = this.findViewById(R.id.editTextTextEmailAddress);
-        EditText clave = this.findViewById(R.id.editTextTextPassword);
+        EditText email = this.findViewById(R.id.txtLoginCorreo);
+        EditText clave = this.findViewById(R.id.txtLoginContraseña);
 
         String x = email.getText().toString();
         String y = clave.getText().toString();
