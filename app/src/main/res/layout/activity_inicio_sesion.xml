@@ -8,7 +8,7 @@
     tools:context=".InicioSesionActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imgLoginLogo"
         android:layout_width="match_parent"
         android:layout_height="181dp"
         android:layout_marginBottom="50dp"
@@ -16,28 +16,30 @@
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/txtLoginCorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:ems="10"
-        android:hint="Correo"
+        android:hint="@string/login_textoCorreoHint"
         android:inputType="textEmailAddress"
+        android:minHeight="48dp"
         android:textColor="#6A6A6A" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/txtLoginContraseña"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:ems="10"
-        android:hint="Contraseña"
-        android:inputType="textPassword" />
+        android:hint="@string/login_textoContraseñaHint"
+        android:inputType="textPassword"
+        android:minHeight="48dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLoginIngresar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="90dp"
@@ -45,29 +47,41 @@
         android:layout_marginBottom="40dp"
         android:layout_marginTop="40dp"
         android:onClick="sesion"
-        android:text="Ingresar" />
+        android:text="@string/login_textoIngresar"
+
+
+        />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/lblloginolvidemicontraseña"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Olvidé mi contraseña"
-        android:textAlignment="center" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="¿No tienes cuenta?"
-        android:textAlignment="center" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:text="@string/login_olvidemicontraseña"
         android:textAlignment="center"
-        android:text="Registrate" />
+        android:textColor="#6A6A6A"
+        />
+
+    <TextView
+        android:id="@+id/lblLoginNoTienesCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/login_notienescuenta"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+
+        />
+
+    <TextView
+        android:id="@+id/lblloginRegistrate"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:textColor="@color/colorRegistrate"
+        android:text="@string/login_registrate"
+        android:textAlignment="center"
+
+        />
 
 </LinearLayout>
