@@ -36,7 +36,7 @@
 
     <!-- string mostrar especialistas -->
 
-    <string name="region">dropDownMenuExample</string>
+    <string name="region">region</string>
     <string-array name="languages">
         <item>C</item>
         <item>C++</item>
@@ -45,7 +45,7 @@
         <item>VisualBasic</item>
     </string-array>
 
-    <string name="provincia">dropDownMenuExample</string>
+    <string name="provincia">provincia</string>
     <string-array name="languages1">
         <item>C</item>
         <item>C++</item>
@@ -54,7 +54,7 @@
         <item>VisualBasic</item>
     </string-array>
 
-    <string name="distrito">dropDownMenuExample</string>
+    <string name="distrito">distrito</string>
     <string-array name="languages2">
         <item>C</item>
         <item>C++</item>

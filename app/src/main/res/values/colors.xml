@@ -12,4 +12,5 @@
     <color name="estadoCancelado">#EF0E13</color>
     <color name="estadoPendiente">#6A6A6A</color>
     <color name="estadoCompletado">#34A90D</color>
+    <color name="ratinbar">#E5E80F</color>
 </resources>
