@@ -20,8 +20,27 @@
         <item
             android:id="@+id/navcerrarsesion"
             android:title="@string/menu_cerrarsession"
-
              />
+        <item
+            android:id="@+id/navmostrarEspecialista"
+            android:title="Mostrar Especialistas"
+            />
+        <item
+            android:id="@+id/navverespecilistasEnMapa"
+            android:title="Especialistas en mapa"
+            />
+        <item
+            android:id="@+id/navContratarServicio"
+            android:title="Contratar servicio"
+            />
 
+        <item
+            android:id="@+id/navCancelarServicio"
+            android:title="Cancelar servicio"
+            />
+        <item
+            android:id="@+id/navCalificarServicio"
+            android:title="Calificar servicio"
+            />
     </group>
 </menu>

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.InicioFragment" >
+
+    tools:context=".ui.InicioFragment">
 
     <ImageView
         android:id="@+id/imgmostrarcategoriasPeinado"
@@ -16,7 +17,9 @@
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/imagenpeinado" />
+        app:srcCompat="@mipmap/imagenpeinado"
+        android:onClick="clickImagen"
+        />
 
     <TextView
         android:id="@+id/lblmostrarcategoriapeinados"
@@ -26,8 +29,8 @@
         android:layout_marginTop="100dp"
         android:text="@string/mostrarcategoriasPeinados"
         android:textColor="@color/black"
-        android:textStyle="bold"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgmostrarcategoriasPeinado"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,11 +40,10 @@
         android:layout_height="100dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="30dp"
+        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgmostrarcategoriasPeinado"
-        app:srcCompat="@mipmap/imagencortes"
-        android:scaleType="fitXY"
-        />
+        app:srcCompat="@mipmap/imagencortes" />
 
     <TextView
         android:id="@+id/lblmostrarcategoriacortes"
@@ -49,10 +51,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="108dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="16sp"
         android:text="@string/mostrarcategoriasCortes"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgmostrarcategoriascortes"
         app:layout_constraintTop_toBottomOf="@+id/lblmostrarcategoriapeinados" />
 
@@ -62,11 +64,10 @@
         android:layout_height="100dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="30dp"
+        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgmostrarcategoriascortes"
-        app:srcCompat="@mipmap/imagenmaquillaje"
-        android:scaleType="fitXY"
-        />
+        app:srcCompat="@mipmap/imagenmaquillaje" />
 
     <TextView
         android:id="@+id/lblmostrarcategoriamaquillaje"
@@ -87,11 +88,10 @@
         android:layout_height="100dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="30dp"
+        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgmostrarcategoriasmaquillaje"
-        app:srcCompat="@mipmap/imagencejas"
-        android:scaleType="fitXY"
-        />
+        app:srcCompat="@mipmap/imagencejas" />
 
     <TextView
         android:id="@+id/lblmostrarcategoriacejas"
