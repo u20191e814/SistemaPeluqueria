@@ -1,4 +1,4 @@
- package com.example.sistemapeluqueria;
+package com.example.sistemapeluqueria.ui;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.sistemapeluqueria.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link CancelarServicio#newInstance} factory method to
+ * Use the {@link Contratar_ServicioFragmento#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CancelarServicio extends Fragment {
+public class Contratar_ServicioFragmento extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class CancelarServicio extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public CancelarServicio() {
+    public Contratar_ServicioFragmento() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class CancelarServicio extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment CancelarServicio.
+     * @return A new instance of fragment Contratar_Servicio.
      */
     // TODO: Rename and change types and number of parameters
-    public static CancelarServicio newInstance(String param1, String param2) {
-        CancelarServicio fragment = new CancelarServicio();
+    public static Contratar_ServicioFragmento newInstance(String param1, String param2) {
+        Contratar_ServicioFragmento fragment = new Contratar_ServicioFragmento();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,10 @@ public class CancelarServicio extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cancelar_servicio, container, false);
+        return inflater.inflate(R.layout.fragment_contratar__servicio, container, false);
+    }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
     }
 }

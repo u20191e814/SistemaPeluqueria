@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Contratar_Servicio">
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp"
+    tools:context=".ui.Contratar_ServicioFragmento">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,6 +19,7 @@
             android:layout_marginTop="20dp"
             android:text="@string/jessica_ramirez"
             android:textAlignment="center"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,8 +29,8 @@
             android:id="@+id/textView3"
             android:layout_width="139dp"
             android:layout_height="19dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:text="@string/sub_categoria"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -112,30 +115,30 @@
             android:id="@+id/imageView2"
             android:layout_width="116dp"
             android:layout_height="101dp"
-            android:layout_marginStart="64dp"
+            android:layout_marginStart="52dp"
+            android:contentDescription="@string/todo"
             android:src="@mipmap/imgcodigodebarra_foreground"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView2"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.726"
-            android:contentDescription="@string/todo" />
+            app:layout_constraintVertical_bias="0.706" />
 
         <EditText
             android:id="@+id/editTextNumber"
             android:layout_width="170dp"
             android:layout_height="48dp"
             android:layout_marginStart="30dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/ingresar_precio"
             android:inputType="number"
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.521"
+            app:layout_constraintHorizontal_bias="0.69"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.137"
-            android:autofillHints="" />
+            app:layout_constraintVertical_bias="0.155" />
 
         <EditText
             android:id="@+id/editTextNumber2"
@@ -143,17 +146,17 @@
             android:layout_height="48dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="16dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/ingresar_cantidad"
             android:inputType="number"
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.177"
             app:layout_constraintStart_toEndOf="@+id/textView5"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.225"
-            android:autofillHints="" />
+            app:layout_constraintVertical_bias="0.225" />
 
         <EditText
             android:id="@+id/editTextTextPersonName4"
@@ -161,34 +164,34 @@
             android:layout_height="48dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="16dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/ingresar_direccion"
             android:inputType="textPersonName"
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.119"
             app:layout_constraintStart_toEndOf="@+id/textView9"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.547"
-            android:autofillHints="" />
+            app:layout_constraintVertical_bias="0.565" />
 
         <EditText
             android:id="@+id/editTextNumber3"
             android:layout_width="170dp"
             android:layout_height="48dp"
             android:layout_marginStart="28dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/ingresar_total"
             android:inputType="number"
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.525"
+            app:layout_constraintHorizontal_bias="0.687"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.307"
-            android:autofillHints="" />
+            app:layout_constraintVertical_bias="0.311" />
 
         <EditText
             android:id="@+id/editTextDate"
@@ -196,17 +199,17 @@
             android:layout_height="48dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="16dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/ingresar_fecha"
             android:inputType="date"
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.177"
             app:layout_constraintStart_toEndOf="@+id/textView7"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.387"
-            android:autofillHints="" />
+            app:layout_constraintVertical_bias="0.396" />
 
         <EditText
             android:id="@+id/editTextTime"
@@ -214,68 +217,69 @@
             android:layout_height="48dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="16dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/ingresar_hora"
             android:inputType="time"
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.177"
             app:layout_constraintStart_toEndOf="@+id/textView8"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.472"
-            android:autofillHints="" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="130dp"
-            android:layout_height="17dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="80dp"
-            android:text="@string/constancia_de_pagos"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintVertical_bias="0.478" />
 
         <EditText
             android:id="@+id/editTextTextPersonName5"
             android:layout_width="190dp"
             android:layout_height="48dp"
-            android:layout_marginStart="12dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/constancia_de_pago"
             android:inputType="textPersonName"
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView10"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.843"
-            android:autofillHints="" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="367dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
-            android:hint="@string/los_servicios_adicionales_se_coordinaran_directamente_con_el_personal"
-            android:textColorHint="#757575"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.817"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.914" />
+            app:layout_constraintVertical_bias="0.818" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/contratar"
-            android:textColor="#7B1FA2"
+            android:text="Contratar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.423"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.994" />
+
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Los servicios adicionales se coordinarán directamente con el personal."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.901" />
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contacia de pago:"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.031"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.807" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -17,30 +17,31 @@
             android:id="@+id/nav_servicioscontratados"
             android:title="@string/menu_servicioscontratados"
             />
-        <item
-            android:id="@+id/navcerrarsesion"
-            android:title="@string/menu_cerrarsession"
-             />
+
         <item
             android:id="@+id/navmostrarEspecialista"
             android:title="Mostrar Especialistas"
             />
         <item
             android:id="@+id/navverespecilistasEnMapa"
-            android:title="Especialistas en mapa"
+            android:title="Especialistas en Mapa"
             />
         <item
             android:id="@+id/navContratarServicio"
-            android:title="Contratar servicio"
+            android:title="Contratar Servicio"
             />
 
         <item
             android:id="@+id/navCancelarServicio"
-            android:title="Cancelar servicio"
+            android:title="Cancelar Servicio"
             />
         <item
             android:id="@+id/navCalificarServicio"
-            android:title="Calificar servicio"
+            android:title="Calificar Servicio"
+            />
+        <item
+            android:id="@+id/navcerrarsesion"
+            android:title="Cerrar Sesión"
             />
     </group>
 </menu>

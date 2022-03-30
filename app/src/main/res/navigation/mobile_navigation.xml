@@ -5,6 +5,33 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/nav_inicio">
 
+
+    <fragment
+        android:id="@+id/navCancelarServicio"
+        android:name="com.example.sistemapeluqueria.ui.CancelarServicioFragment"
+        android:label="Cancelar Servicio"
+        tools:layout="@layout/fragment_cancelar_servicio"
+        />
+
+    <fragment
+        android:id="@+id/navContratarServicio"
+        android:name="com.example.sistemapeluqueria.ui.Contratar_ServicioFragmento"
+        android:label="Contratar Servicio"
+        tools:layout="@layout/fragment_contratar__servicio"
+        />
+    <fragment
+        android:id="@+id/nav_servicioscontratados"
+        android:name="com.example.sistemapeluqueria.ui.MostrarServicioContratadoFragment"
+        android:label="Mostrar Servicios Contratados"
+        tools:layout="@layout/fragment_mostrar_servicio_contratado"
+        />
+
+    <fragment
+        android:id="@+id/navCalificarServicio"
+        android:name="com.example.sistemapeluqueria.ui.CalificarServicioFragment"
+        android:label="Calificar Servicio"
+        tools:layout="@layout/fragment_calificar_servicio"
+        />
     <fragment
         android:id="@+id/navmostrarEspecialista"
         android:name="com.example.sistemapeluqueria.ui.MostrarEspecialistasFragment"

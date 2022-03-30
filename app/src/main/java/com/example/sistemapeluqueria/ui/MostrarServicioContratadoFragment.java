@@ -63,4 +63,9 @@ public class MostrarServicioContratadoFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_mostrar_servicio_contratado, container, false);
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
 }
