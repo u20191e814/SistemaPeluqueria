@@ -6,10 +6,29 @@
     app:startDestination="@id/nav_inicio">
 
     <fragment
+        android:id="@+id/navmostrarEspecialista"
+        android:name="com.example.sistemapeluqueria.ui.MostrarEspecialistasFragment"
+        android:label="Mostrar especialistas"
+        tools:layout="@layout/fragment_mostrar_especialistas"
+        />
+    <fragment
         android:id="@+id/nav_inicio"
         android:name="com.example.sistemapeluqueria.ui.InicioFragment"
         android:label="@string/menu_inicio"
-        tools:layout="@layout/fragment_inicio" />
+        tools:layout="@layout/fragment_inicio">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navMiCuenta"
+        android:name="com.example.sistemapeluqueria.ui.MiCuentaFragment"
+        android:label="Mi cuenta"
+        tools:layout="@layout/fragment_mi_cuenta" />
+    <fragment
+        android:id="@+id/navverespecilistasEnMapa"
+        android:name="com.example.sistemapeluqueria.ui.VerEspecialistaEnMapaFragment"
+        android:label="Especialistas en mapa"
+        tools:layout="@layout/fragment_ver_especialista_en_mapa" />
 
 
 </navigation>

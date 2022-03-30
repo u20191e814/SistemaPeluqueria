@@ -25,22 +25,8 @@
         <entry key="..\:/Users/IVision/Desktop/Upc/Moviles/SistemaPeluqueria/app/src/main/res/menu/activity_main_drawer.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/IVision/Desktop/Upc/Moviles/SistemaPeluqueria/app/src/main/res/menu/main.xml" value="0.1" />
         <entry key="..\:/Users/IVision/Desktop/Upc/Moviles/SistemaPeluqueria/app/src/main/res/mipmap-anydpi-v26/logobcp.xml" value="0.1455" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.109" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/drawable/ic_launcher_background.xml" value="0.109" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.109" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/drawable/logo_peluqueria_background.xml" value="0.109" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/drawable/side_nav_bar.xml" value="0.109" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/layout/activity_inicio_sesion.xml" value="0.25" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/layout/activity_main.xml" value="0.12552083333333333" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/layout/activity_registrar_cliente.xml" value="0.33" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/layout/app_bar_main.xml" value="0.13272543059777103" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/layout/content_main.xml" value="0.13272543059777103" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/layout/fragment_contratar__servicio.xml" value="0.5" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/layout/fragment_inicio.xml" value="0.13272543059777103" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/layout/nav_header_main.xml" value="0.13272543059777103" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/menu/activity_main_drawer.xml" value="0.26871794871794874" />
-        <entry key="..\:/Users/MAX/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/menu/main.xml" value="0.26871794871794874" />
-        <entry key="..\:/Users/jrtapiac_ext/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/layout/activity_inicio_sesion.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/jrtapiac_ext/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/layout/activity_inicio_sesion.xml" value="0.4" />
+        <entry key="..\:/Users/jrtapiac_ext/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/layout/activity_registrar_cliente.xml" value="0.4" />
         <entry key="..\:/Users/jrtapiac_ext/AndroidStudioProjects/SistemaPeluqueria/app/src/main/res/layout/nav_header_main.xml" value="0.18802083333333333" />
       </map>
     </option>

@@ -34,6 +34,36 @@
     <string name="mostrarcategoriasMaquillaje">Maquillaje</string>
     <string name="mostrarcategoriasCejas">Cejas</string>
 
+    <!-- string mostrar especialistas -->
+
+    <string name="region">region</string>
+    <string-array name="languages">
+        <item>C</item>
+        <item>C++</item>
+        <item>Java</item>
+        <item>JavaScript</item>
+        <item>VisualBasic</item>
+    </string-array>
+
+    <string name="provincia">provincia</string>
+    <string-array name="languages1">
+        <item>C</item>
+        <item>C++</item>
+        <item>Java</item>
+        <item>JavaScript</item>
+        <item>VisualBasic</item>
+    </string-array>
+
+    <string name="distrito">distrito</string>
+    <string-array name="languages2">
+        <item>C</item>
+        <item>C++</item>
+        <item>Java</item>
+        <item>JavaScript</item>
+        <item>VisualBasic</item>
+    </string-array>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login">LoginActivity</string>
@@ -45,5 +75,25 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="sub_categoria">Sub Categoria</string>
+    <string name="contratar">Contratar</string>
+    <string name="ingresar_precio">Ingresar Precio</string>
+    <string name="ingresar_cantidad">Ingresar Cantidad</string>
+    <string name="ingresar_total">Ingresar Total</string>
+    <string name="ingresar_fecha">Ingresar Fecha</string>
+    <string name="ingresar_hora">Ingresar Hora</string>
+    <string name="ingresar_direccion">Ingresar Direccion</string>
+    <string name="constancia_de_pago">Constancia de pago</string>
+    <string name="los_servicios_adicionales_se_coordinaran_directamente_con_el_personal">Los servicios adicionales se coordinaran directamente con el personal</string>
+    <string name="precio">Precio:</string>
+    <string name="jessica_ramirez">Jessica Ramirez</string>
+    <string name="cantidad">Cantidad:</string>
+    <string name="total">Total:</string>
+    <string name="fecha">Fecha</string>
+    <string name="hora">Hora:</string>
+    <string name="direccion">Direccion:</string>
+    <string name="qr_de_pago">Qr de pago:</string>
+    <string name="todo">TODO</string>
+    <string name="constancia_de_pagos">Constancia de Pagos:</string>
 
 </resources>
