@@ -207,6 +207,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
+                android:layout_marginBottom="40dp"
                 android:text="Completado"
                 android:textColor="@color/estadoCompletado" />
 
