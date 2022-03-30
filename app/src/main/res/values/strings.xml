@@ -95,5 +95,18 @@
     <string name="qr_de_pago">Qr de pago:</string>
     <string name="todo">TODO</string>
     <string name="constancia_de_pagos">Constancia de Pagos:</string>
+    <string name="servicio_contratado">Servicio Contratado:</string>
+    <string name="peinado_matrimonial">Peinado Matrimonial</string>
+    <string name="estado">Estado:</string>
+    <string name="pendiente">Pendiente</string>
+    <string name="cancelar_servicio">CANCELAR SERVICIO</string>
+    <string name="estados">Estado</string>
+    <string name="si_cancela_el_servicio_la_devolucion_del_pago_sera_previa_coordinacion_con_el_personal_contratado">Si cancela el servicio la devolucion del pago sera previa coordinacion con el personal contratado</string>
+    <string name="_1">1</string>
+    <string name="_100">100</string>
+    <string name="_100">100</string>
+    <string name="_2022_08_08">2022-08-08</string>
+    <string name="_14_30">14:30</string>
+    <string name="villa_los_angeles">Villa Los Angeles</string>
 
 </resources>
