@@ -34,20 +34,26 @@ public class VerEspecialistaEnMapaFragment extends Fragment {
         supportMapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(@NonNull GoogleMap googleMap) {
-                googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-                    @Override
-                    public void onMapClick(@NonNull LatLng latLng) {
-                        MarkerOptions markerOptions = new MarkerOptions();
-                        markerOptions.position(latLng);
-                        markerOptions.title(latLng.latitude +" : "+ latLng.longitude);
+                //googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                    //@Override
+                    //public void onMapClick(@NonNull LatLng latLng) {
+                    //    MarkerOptions markerOptions = new MarkerOptions();
+                     //   markerOptions.position(latLng);
+                    //    markerOptions.title(latLng.latitude +" : "+ latLng.longitude);
 
-                        googleMap.clear();
-                        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+                      //  googleMap.clear();
+                        //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
 
-                        googleMap.addMarker(markerOptions);
+                        //googleMap.addMarker(markerOptions);
 
-                    }
-                });
+                    //}
+                //});
+
+                LatLng lima = new LatLng(-12.0453, -77.0311);
+                googleMap.addMarker(new MarkerOptions()
+                        .position(lima)
+                        .title("Lima"));
+                googleMap.moveCamera(CameraUpdateFactory.newLatLng(lima));
             }
         });
         return  v;
