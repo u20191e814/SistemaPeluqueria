@@ -3,6 +3,8 @@ package com.example.sistemapeluqueria.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.FileObserver;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,21 +44,6 @@ public class InicioFragment extends Fragment {
 
         View s = inflater.inflate(R.layout.fragment_inicio,container, false);
 
-        //ImageView img = s.findViewById(R.id.imgmostrarcategoriasPeinado);
-       //img.setOnClickListener(c-> {
-
-          // Fragment nuevoFragmento = new MostrarEspecialistasFragment();
-          // FragmentTransaction transaction = getFragmentManager().beginTransaction();
-         //  transaction.replace(R.id.nav_host_fragment_content_main, nuevoFragmento);
-
-       //    transaction.commit();
-
-     //  });
-
-        RecyclerView rec = s.findViewById(R.id.recycleInicio);
-        rec.setOnClickListener(c->{
-            navController.navigate(R.id.navmostrarEspecialista);
-        });
 
 
         return  s;
@@ -79,6 +66,7 @@ public class InicioFragment extends Fragment {
 
         RecyclerView.Adapter<InicioAdapter.ViewHolder> adaptador = new InicioAdapter(listaCategorias);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+
         recyclerView.setAdapter(adaptador);
     }
 
