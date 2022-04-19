@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
+import androidx.navigation.NavController;
 import androidx.navigation.NavHostController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -25,8 +26,8 @@ import java.util.zip.Inflater;
 public class InicioAdapter extends RecyclerView.Adapter<InicioAdapter.ViewHolder>
 
 {
-    private View.OnClickListener listener;
-     private final List<CategoryModel> listacategorias;
+
+     private  List<CategoryModel> listacategorias;
     public InicioAdapter(List<CategoryModel> listaCategorias) {
 
        this. listacategorias = listaCategorias;
@@ -48,13 +49,20 @@ public class InicioAdapter extends RecyclerView.Adapter<InicioAdapter.ViewHolder
 
 
         holder.nombre.setText(nombre);
+
         holder.imagen.setImageDrawable(ContextCompat.getDrawable(context,rutaImagen));
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i("Click", nombre);
-                Navigation.findNavController(view).navigate(R.id.navmostrarEspecialista);
-            }
+        //holder.itemView.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+        //        Log.i("Click", nombre);
+        //        Navigation.findNavController(view).navigate(R.id.navmostrarEspecialista);
+        //    }
+        //});
+
+        holder.itemView.setOnClickListener(v->{
+            NavController nav = Navigation.findNavController(holder.itemView);
+            nav.navigate(R.id.navmostrarEspecialista);
+
         });
 
     }
@@ -70,8 +78,8 @@ public class InicioAdapter extends RecyclerView.Adapter<InicioAdapter.ViewHolder
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private final TextView nombre;
-        private final ImageView imagen;
+        private  TextView nombre;
+        private  ImageView imagen;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             nombre= itemView.findViewById(R.id.txtTextoCategoria);
