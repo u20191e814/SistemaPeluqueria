@@ -5,19 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginTop="80dp"
+    android:layout_marginRight="40dp"
+    android:layout_marginLeft="40dp"
     tools:context=".RegistrarClienteActivity">
+
+    <TextView
+        android:id="@+id/txtTituloRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="Crea tu cuenta"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="24sp"/>
 
     <EditText
         android:id="@+id/txtNombreRegistrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginRight="40dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Nombre"
+        android:hint="Nombre"
         android:textColor="#ACAAAA" />
 
     <EditText
@@ -26,9 +36,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
-        android:text="Apellido"
+        android:hint="Apellido"
         android:layout_marginBottom="20dp"
         android:textColor="#ACAAAA" />
 
@@ -39,8 +47,6 @@
         android:ems="10"
         android:hint="Telefono"
         android:layout_marginBottom="20dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
         android:inputType="phone" />
 
     <EditText
@@ -49,8 +55,6 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_marginBottom="20dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
         android:hint="Correo"
         android:inputType="textEmailAddress" />
 
@@ -59,18 +63,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
         android:hint="Contraseña"
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginRight="90dp"
-        android:onClick="crearCuenta"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:onClick="createUser"
         android:text="Crear Cuenta" />
+
 </LinearLayout>

@@ -14,4 +14,5 @@
     <color name="estadoCompletado">#34A90D</color>
     <color name="ratinbar">#E5E80F</color>
     <color name="calificar">#218002</color>
+    <color name="txtplaceholder">#6A6A6A</color>
 </resources>

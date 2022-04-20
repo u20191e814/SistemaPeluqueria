@@ -5,8 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegistrarClienteActivity extends AppCompatActivity {
 
@@ -14,27 +27,11 @@ public class RegistrarClienteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_cliente);
+
     }
-    public void crearCuenta(View v){
-        EditText nombre = this.findViewById(R.id.txtNombreRegistrar);
-        EditText apellido = this.findViewById(R.id.txtApellidoRegistar) ;
-        EditText telefono = this.findViewById(R.id.txtTelefonoRegistrar);
-        EditText email = this.findViewById(R.id.txtEmailRegistrar);
-        EditText clave = this.findViewById(R.id.txtClaveRegistrar);
 
+    public void createUser(View v){
 
-        String u = nombre.getText().toString();
-        String w = apellido.getText().toString();
-        String x = telefono.getText().toString();
-        String y = email.getText().toString();
-        String z = clave.getText().toString();
-
-        Log.i("===>", u);
-        Log.i("===>", w);
-        Log.i("===>", x);
-        Log.i("===>", y);
-        Log.i("===>", z);
-
-        startActivity(new Intent(this, InicioSesionActivity.class));
     }
+
 }

@@ -26,7 +26,7 @@ public class InicioAdapter extends RecyclerView.Adapter<InicioAdapter.ViewHolder
 
 {
     private View.OnClickListener listener;
-     private final List<CategoryModel> listacategorias;
+    private final List<CategoryModel> listacategorias;
     public InicioAdapter(List<CategoryModel> listaCategorias) {
 
        this. listacategorias = listaCategorias;
