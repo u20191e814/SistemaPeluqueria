@@ -3,10 +3,12 @@ package com.example.sistemapeluqueria.ui;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +23,8 @@ import com.example.sistemapeluqueria.databinding.ActivityMainBinding;
 
 public class MostrarEspecialistasFragment extends Fragment {
 
-
+private int id_categoria ;
+private String nombre_categoria;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -30,5 +33,14 @@ public class MostrarEspecialistasFragment extends Fragment {
 
         return v;
 
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments()!=null){
+            nombre_categoria = getArguments().getString("nombre");
+            id_categoria= getArguments().getInt("id_categoria");
+        }
     }
 }

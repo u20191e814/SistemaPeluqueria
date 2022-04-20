@@ -63,10 +63,6 @@ public class InicioFragment extends Fragment {
         View s = inflater.inflate(R.layout.fragment_inicio,container, false);
         listaCategorias = new ArrayList<>();
         recyclerView = s.findViewById(R.id.recycleInicio);
-        //listaCategorias.add(new CategoryModel(1, "Peinados", R.mipmap.imagenpeinado));
-        //listaCategorias.add(new CategoryModel(2,"Cortes", R.mipmap.imagencortes));
-        // listaCategorias.add(new CategoryModel(3, "Maquillaje", R.mipmap.imagenmaquillaje));
-        // listaCategorias.add(new CategoryModel( 4,"Cejas", R.mipmap.imagencejas));
 
 
         adaptador = new InicioAdapter(listaCategorias);
@@ -107,11 +103,7 @@ public class InicioFragment extends Fragment {
                 // listaCategorias.add(new CategoryModel(3, "Maquillaje", R.mipmap.imagenmaquillaje));
                 // listaCategorias.add(new CategoryModel( 4,"Cejas", R.mipmap.imagencejas));
 
-                Log.i("servicio", R.mipmap.imagenpeinado+ "");
-                Log.i("servicio", R.mipmap.imagencortes + "");
-                Log.i("servicio", R.mipmap.imagenmaquillaje + "");
-                Log.i("servicio", R.mipmap. imagencejas + "");
-                for (int i = 0; i<jsonArray.length(); i++)
+               for (int i = 0; i<jsonArray.length(); i++)
                 {
 
                     JSONObject object = jsonArray.getJSONObject(i);

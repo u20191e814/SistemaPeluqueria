@@ -1,6 +1,7 @@
 package com.example.sistemapeluqueria.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +47,7 @@ public class InicioAdapter extends RecyclerView.Adapter<InicioAdapter.ViewHolder
        Context context = holder.itemView.getContext();
         String nombre = listacategorias.get(position).getNombre();
         int rutaImagen = listacategorias.get(position).getRutaImagen();
+        int id = listacategorias.get(position).getId_categoria();
 
 
         holder.nombre.setText(nombre);
@@ -60,8 +62,11 @@ public class InicioAdapter extends RecyclerView.Adapter<InicioAdapter.ViewHolder
         //});
 
         holder.itemView.setOnClickListener(v->{
+            Bundle b = new Bundle();
+            b.putString("nombre", nombre);
+            b.putInt("id_categoria", id);
             NavController nav = Navigation.findNavController(holder.itemView);
-            nav.navigate(R.id.navmostrarEspecialista);
+            nav.navigate(R.id.navmostrarEspecialista,b);
 
         });
 
