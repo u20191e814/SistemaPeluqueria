@@ -74,6 +74,7 @@ public class RegistrarClienteActivity extends AppCompatActivity {
 
     public void createUser(RegisterModel userRegister){
 
+        //conexion al servicio
         String url = "http://3.145.140.134:9090/api/peluqueria/client";
 
         JSONObject jsonobject = new JSONObject();
