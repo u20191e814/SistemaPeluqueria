@@ -15,8 +15,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.sistemapeluqueria.controladores.webServicio;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.regex.Matcher;
@@ -48,13 +46,10 @@ public class InicioSesionActivity extends AppCompatActivity {
                 String email = txtLoginCorreo.getText().toString();
                 Matcher mather = pattern.matcher(email);
                 if (mather.find() == true) {
-                    Toast.makeText(getApplicationContext(), "El email ingresado es válido", Toast.LENGTH_LONG).show();
-
-
-                    validarUsuario(webServicio.dominio_servicio+ "api/peluqueria/login");
+                    System.out.println("El email ingresado es válido.");
+                    validarUsuario("http://3.145.140.134:9090/api/peluqueria/login");
                 } else {
-                    Toast.makeText(getApplicationContext(), "El email ingresado es inválido.", Toast.LENGTH_LONG).show();
-
+                    System.out.println("El email ingresado es inválido.");
                 }
             }
         });
@@ -99,23 +94,15 @@ public class InicioSesionActivity extends AppCompatActivity {
 
                         try {
                             JSONObject obj = new JSONObject(response.toString());
-                            String estado= obj.getString("status");
-                            if (!estado.equals("OK")) {
-                                Toast toast = Toast.makeText(getApplicationContext(), obj.getString("statusMessage"), Toast.LENGTH_SHORT);
-                                toast.show();
-                            }
-
                             String data = obj.getString("data");
 
                             if (data != "null"){
-                                //Toast.makeText(InicioSesionActivity.this, "Successfull", Toast.LENGTH_LONG).show();
-                                 Intent intent =new Intent(getBaseContext(), MainActivity.class);
-                                 intent.putExtra("data", data);
-                                 startActivity(intent);
-
+                                Toast.makeText(InicioSesionActivity.this, "Successfull", Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(getBaseContext(), MainActivity.class));
+                                Log.i("status======>", data);
                             }
                             else {
-                                Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrecta", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
                             }
 
                         } catch (JSONException e) {

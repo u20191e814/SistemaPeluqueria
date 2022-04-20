@@ -1,8 +1,6 @@
 package com.example.sistemapeluqueria;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,16 +37,11 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 //implements NavigationView.OnNavigationItemSelectedListener
     private AppBarConfiguration mAppBarConfiguration;
-    public String data_Login;
+
     private DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        Intent intent = getIntent();
-        data_Login = intent.getStringExtra("data");
-
 
 
         setContentView(R.layout.activity_main);
