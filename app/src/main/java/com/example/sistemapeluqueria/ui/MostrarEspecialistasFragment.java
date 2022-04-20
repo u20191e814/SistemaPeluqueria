@@ -3,12 +3,10 @@ package com.example.sistemapeluqueria.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.view.View;
-=======
+
 
 import androidx.annotation.Nullable;
->>>>>>> 91676e26f7a822c0d0056fb60405a5030a9d7fc6
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -28,14 +26,13 @@ import com.example.sistemapeluqueria.databinding.ActivityMainBinding;
 
 
 public class MostrarEspecialistasFragment extends Fragment {
-<<<<<<< HEAD
+
     //private Spinner spinnerDepartamento;
 
-=======
+
 
 private int id_categoria ;
 private String nombre_categoria;
->>>>>>> 91676e26f7a822c0d0056fb60405a5030a9d7fc6
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

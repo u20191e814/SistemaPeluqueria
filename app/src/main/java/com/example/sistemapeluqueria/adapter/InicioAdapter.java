@@ -27,13 +27,9 @@ import java.util.zip.Inflater;
 public class InicioAdapter extends RecyclerView.Adapter<InicioAdapter.ViewHolder>
 
 {
-<<<<<<< HEAD
     private View.OnClickListener listener;
     private final List<CategoryModel> listacategorias;
-=======
 
-     private  List<CategoryModel> listacategorias;
->>>>>>> 91676e26f7a822c0d0056fb60405a5030a9d7fc6
     public InicioAdapter(List<CategoryModel> listaCategorias) {
 
        this. listacategorias = listaCategorias;
