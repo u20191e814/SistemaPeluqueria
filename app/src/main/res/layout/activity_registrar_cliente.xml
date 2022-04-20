@@ -16,8 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
         android:text="Crea tu cuenta"
-        android:textStyle="bold"
         android:textAlignment="center"
+        android:textStyle="bold"
         android:textSize="24sp"/>
 
     <EditText
@@ -25,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:drawableStart="@drawable/ic_person"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Nombre"
@@ -34,16 +35,18 @@
         android:id="@+id/txtApellidoRegistar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_person"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Apellido"
-        android:layout_marginBottom="20dp"
         android:textColor="#ACAAAA" />
 
     <EditText
         android:id="@+id/txtTelefonoRegistrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_phone"
         android:ems="10"
         android:hint="Telefono"
         android:layout_marginBottom="20dp"
@@ -53,8 +56,9 @@
         android:id="@+id/txtEmailRegistrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_marginBottom="20dp"
+        android:drawableStart="@drawable/ic_email"
+        android:ems="10"
         android:hint="Correo"
         android:inputType="textEmailAddress" />
 
@@ -62,6 +66,7 @@
         android:id="@+id/txtClaveRegistrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_password"
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPassword" />
@@ -73,7 +78,6 @@
         android:layout_marginTop="40dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:onClick="createUser"
         android:text="Crear Cuenta" />
 
 </LinearLayout>
