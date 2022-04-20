@@ -17,8 +17,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Fiorela"
-        android:textColor="#ACAAAA" />
+
+        android:textColor="#000000" />
 
     <EditText
         android:id="@+id/txtApellidoMiCuenta"
@@ -30,8 +30,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Rodriguez Soto"
-        android:textColor="#ACAAAA" />
+
+        android:textColor="#000000" />
 
     <EditText
         android:id="@+id/txtTelefonoMiCuenta"
@@ -41,7 +41,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="987456123"
+
         android:inputType="phone"
         android:minHeight="48dp" />
 
@@ -53,7 +53,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="fiorela@gmail.com"
+
         android:inputType="textEmailAddress"
         android:minHeight="48dp" />
 
@@ -66,7 +66,7 @@
         android:ems="10"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:text="contraseña" />
+          />
 
     <Button
         android:id="@+id/btnActualizarCuenta"
