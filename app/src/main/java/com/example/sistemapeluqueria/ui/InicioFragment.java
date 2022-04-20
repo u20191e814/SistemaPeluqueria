@@ -109,7 +109,7 @@ public class InicioFragment extends Fragment {
                     JSONObject object = jsonArray.getJSONObject(i);
                     CategoryModel categoria =  new CategoryModel(object.getInt("pk_categoria"), object.getString("nombre"), object.getInt("codeImagen"));
                     listaCategorias.add(categoria);
-                    Log.i("servicio", categoria.getId_categoria() +" " + categoria.getNombre() + "  " + categoria.getRutaImagen());
+                    //Log.i("servicio", categoria.getId_categoria() +" " + categoria.getNombre() + "  " + categoria.getRutaImagen());
                 }
 
                 adaptador.notifyDataSetChanged();
