@@ -11,14 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="100dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Fiorela"
-        android:textColor="#ACAAAA" />
+
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/txtApellidoMiCuenta"
@@ -30,8 +30,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Rodriguez Soto"
-        android:textColor="#ACAAAA" />
+
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/txtTelefonoMiCuenta"
@@ -41,7 +41,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="987456123"
+
         android:inputType="phone"
         android:minHeight="48dp" />
 
@@ -53,7 +53,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="fiorela@gmail.com"
+
         android:inputType="textEmailAddress"
         android:minHeight="48dp" />
 
@@ -66,7 +66,7 @@
         android:ems="10"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:text="contraseña" />
+          />
 
     <Button
         android:id="@+id/btnActualizarCuenta"
@@ -75,7 +75,18 @@
         android:layout_marginLeft="90dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="90dp"
-        android:onClick="click_ActualizarCuenta"
+
         android:text="ACTUALIZAR" />
+
+    <Button
+        android:id="@+id/btnEliminarCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="90dp"
+        android:backgroundTint="@color/estadoCancelado"
+
+        android:text="ELIMINAR CUENTA" />
 
 </LinearLayout>
