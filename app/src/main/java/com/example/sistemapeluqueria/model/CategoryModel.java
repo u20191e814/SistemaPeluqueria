@@ -5,6 +5,7 @@ public class CategoryModel {
     private  String nombre;
     private  int rutaImagen;
 
+
     public CategoryModel( int Id_categoria,   String nombre, int rutaImagen) {
         this.nombre = nombre;
         this.rutaImagen = rutaImagen;
