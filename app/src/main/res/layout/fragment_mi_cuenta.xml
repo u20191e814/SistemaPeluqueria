@@ -11,14 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="100dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
 
-        android:textColor="#000000" />
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/txtApellidoMiCuenta"
@@ -31,7 +31,7 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
 
-        android:textColor="#000000" />
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/txtTelefonoMiCuenta"
@@ -75,7 +75,18 @@
         android:layout_marginLeft="90dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="90dp"
-        android:onClick="click_ActualizarCuenta"
+
         android:text="ACTUALIZAR" />
+
+    <Button
+        android:id="@+id/btnEliminarCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="90dp"
+        android:backgroundTint="@color/estadoCancelado"
+
+        android:text="ELIMINAR CUENTA" />
 
 </LinearLayout>

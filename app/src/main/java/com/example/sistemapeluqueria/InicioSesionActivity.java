@@ -48,7 +48,7 @@ public class InicioSesionActivity extends AppCompatActivity {
                 String email = txtLoginCorreo.getText().toString();
                 Matcher mather = pattern.matcher(email);
                 if (mather.find() == true) {
-                    Toast.makeText(getApplicationContext(), "El email ingresado es válido", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "El email ingresado es válido", Toast.LENGTH_LONG).show();
 
 
                     validarUsuario(webServicio.dominio_servicio+ "api/peluqueria/login");
@@ -63,17 +63,10 @@ public class InicioSesionActivity extends AppCompatActivity {
         TextView login = this.findViewById(R.id.lblRegisterLogin);
 
         login .setOnClickListener(c-> {
-            //Toast.makeText(getApplicationContext(), "Remplazar por tu codigo", Toast.LENGTH_LONG)
-            //        .show();
+
                 startActivity(new Intent(this, RegistrarClienteActivity.class));
 
         });
-        //login.callOnClick(v->
-        //{
-        //    startActivity(new Intent(this, RegistrarClienteActivity.class));
-
-        //});
-
 
     }
 
