@@ -2,27 +2,22 @@ package com.example.sistemapeluqueria.adapter;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
-import androidx.navigation.NavHostController;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sistemapeluqueria.R;
 import com.example.sistemapeluqueria.model.CategoryModel;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
 public class InicioAdapter extends RecyclerView.Adapter<InicioAdapter.ViewHolder>
 
@@ -89,7 +84,7 @@ public class InicioAdapter extends RecyclerView.Adapter<InicioAdapter.ViewHolder
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             nombre= itemView.findViewById(R.id.txtTextoCategoria);
-            imagen = itemView.findViewById(R.id.imgCategoria);
+            imagen = itemView.findViewById(R.id.imgEspecialista);
 
         }
     }

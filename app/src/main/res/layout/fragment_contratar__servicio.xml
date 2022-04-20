@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/txtEspecialidadMostrarCategoria"
             android:layout_width="139dp"
             android:layout_height="19dp"
             android:layout_marginStart="8dp"
@@ -37,7 +37,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/lblEspecialidadMostrarEspecialistas"
             android:layout_width="100dp"
             android:layout_height="23dp"
             android:layout_marginStart="10dp"
@@ -48,7 +48,7 @@
             app:layout_constraintVertical_bias="0.152" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/lblDireccionMostrarEspecialistas"
             android:layout_width="100dp"
             android:layout_height="23dp"
             android:layout_marginStart="10dp"
@@ -59,7 +59,7 @@
             app:layout_constraintVertical_bias="0.228" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/txtDireccionMostrarEspecialistas"
             android:layout_width="100dp"
             android:layout_height="23dp"
             android:layout_marginStart="10dp"
@@ -103,7 +103,7 @@
             app:layout_constraintVertical_bias="0.565" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txtNombreMostrarEspecialistas"
             android:layout_width="100dp"
             android:layout_height="20dp"
             android:layout_marginStart="10dp"
@@ -120,7 +120,7 @@
             android:contentDescription="@string/todo"
             android:src="@mipmap/imgcodigodebarra_foreground"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/txtNombreMostrarEspecialistas"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.706" />
 
@@ -155,7 +155,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.177"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintStart_toEndOf="@+id/lblDireccionMostrarEspecialistas"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.225" />
 

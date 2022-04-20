@@ -1,15 +1,17 @@
 package com.example.sistemapeluqueria.model;
 
 public class MostrarEspecialistaModel {
+    private int id_especialista;
     private  String nombre;
     private  String direccion;
-    private  int Latitud;
-    private  int Longitud;
+    private  double Latitud;
+    private  double  Longitud;
     private  int Calificacion;
     private  int fk_categoria;
     private  int imagen;
 
-public MostrarEspecialistaModel(String nombre,int imagen,String Direccion,int latitud,int Longitud,int Calificacion,int fk_categoria){
+public MostrarEspecialistaModel(int id_especialista, String nombre,int imagen,String direccion,double latitud,double Longitud,int Calificacion,int fk_categoria){
+    this.id_especialista=id_especialista;
     this.nombre = nombre;
     this.direccion=direccion;
     this.Latitud=latitud;
@@ -19,6 +21,19 @@ public MostrarEspecialistaModel(String nombre,int imagen,String Direccion,int la
     this.imagen=imagen;
 
 }
+
+    public int getId_especialista() {
+        return id_especialista;
+    }
+
+    public void setId_especialista(int id_especialista) {
+        this.id_especialista = id_especialista;
+    }
+
+    public double getLatitud() {
+        return Latitud;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -35,7 +50,7 @@ public MostrarEspecialistaModel(String nombre,int imagen,String Direccion,int la
         this.direccion = direccion;
     }
 
-    public int getlatitud() {
+    public double getlatitud() {
         return Latitud;
     }
 
@@ -43,7 +58,7 @@ public MostrarEspecialistaModel(String nombre,int imagen,String Direccion,int la
         this.Latitud = latitud;
     }
 
-    public int getLongitud() {
+    public double getLongitud() {
         return Longitud;
     }
 

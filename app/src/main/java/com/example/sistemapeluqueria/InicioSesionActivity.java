@@ -88,7 +88,9 @@ public class InicioSesionActivity extends AppCompatActivity {
                             if (data != "null"){
                                 JSONObject dataRes = obj.getJSONObject("data");
                                 Toast.makeText(InicioSesionActivity.this, "Bienvenid@ "+dataRes.getString("nombre"), Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(getBaseContext(), MainActivity.class));
+                                Intent intent= new Intent(getBaseContext(), MainActivity.class);
+                                intent.putExtra("data", data);
+                                startActivity(intent);
                                 //Clear login
                                 txtLoginCorreo.setText("");
                                 txtLoginContrasenia.setText("");

@@ -49,11 +49,12 @@ import java.util.List;
 public class InicioFragment extends Fragment {
 
     NavController navController;
-    private   RecyclerView recyclerView;
+
 
     private List<CategoryModel> listaCategorias ;
     private RecyclerView.Adapter<InicioAdapter.ViewHolder> adaptador;
     private LinearLayoutManager LayoutManager;
+    private   RecyclerView recyclerView;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
