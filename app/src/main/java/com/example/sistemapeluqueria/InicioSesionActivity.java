@@ -15,14 +15,16 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.sistemapeluqueria.model.LoginModel;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class InicioSesionActivity extends AppCompatActivity {
 
-    EditText txtLoginCorreo,txtLoginContraseña;
+    //Crear variables
+    EditText txtLoginCorreo,txtLoginContrasenia;
     Button btnLoginIngresar;
 
     @Override
@@ -30,81 +32,70 @@ public class InicioSesionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_sesion);
 
+        //Referencia variables
         txtLoginCorreo = findViewById(R.id.txtLoginCorreo);
-        txtLoginContraseña = findViewById(R.id.txtLoginContraseña);
+        txtLoginContrasenia = findViewById(R.id.txtLoginContrasenia);
         btnLoginIngresar = findViewById(R.id.btnLoginIngresar);
 
+
+        //Evento click button
         btnLoginIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Patrón para validar el email
-                Pattern pattern = Pattern
-                        .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+                //Instaciar LoginModel
+                LoginModel userLogin = new LoginModel(txtLoginCorreo.getText().toString(), txtLoginContrasenia.getText().toString());
 
-                // El email a validar
-                String email = txtLoginCorreo.getText().toString();
-                Matcher mather = pattern.matcher(email);
-                if (mather.find() == true) {
-                    System.out.println("El email ingresado es válido.");
-                    validarUsuario("http://3.145.140.134:9090/api/peluqueria/login");
+                if (userLogin.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Usuario o contraseña requeridos", Toast.LENGTH_LONG).show();
+                }
+                else  if (userLogin.validateEmail()) {
+                    validarUsuario( userLogin);
                 } else {
-                    System.out.println("El email ingresado es inválido.");
+                    Toast.makeText(getApplicationContext(), "El email ingresado es inválido", Toast.LENGTH_LONG).show();
                 }
             }
         });
 
+        TextView linkRegister = this.findViewById(R.id.lblRegisterLogin);
 
-        TextView login = this.findViewById(R.id.lblRegisterLogin);
-
-        login .setOnClickListener(c-> {
-            //Toast.makeText(getApplicationContext(), "Remplazar por tu codigo", Toast.LENGTH_LONG)
-            //        .show();
+        linkRegister .setOnClickListener(c-> {
                 startActivity(new Intent(this, RegistrarClienteActivity.class));
-
         });
-        //login.callOnClick(v->
-        //{
-        //    startActivity(new Intent(this, RegistrarClienteActivity.class));
-
-        //});
-
-
     }
 
-    private  void validarUsuario(String URL){
+    private  void validarUsuario(LoginModel userLogin){
 
+        String url = "http://3.145.140.134:9090/api/peluqueria/login";
+
+        //Instancia JSONObject
         JSONObject jsonobject = new JSONObject();
         try {
-
-            jsonobject.put("correo", txtLoginCorreo.getText().toString());
-            jsonobject.put("clave", txtLoginContraseña.getText().toString());
-            Log.i("json======>", jsonobject.toString());
+            jsonobject.put("correo", userLogin.getCorreo());
+            jsonobject.put("clave", userLogin.getClave());
         } catch (JSONException e) {
-            Log.i("errorjon======>", e.getMessage());
+            Log.i("Errorjon======>", e.getMessage());
         }
 
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
-                URL, jsonobject,
+                url, jsonobject,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        //Success Callback
-                        Log.i("response======>", response.toString());
-
                         try {
                             JSONObject obj = new JSONObject(response.toString());
                             String data = obj.getString("data");
 
                             if (data != "null"){
-                                Toast.makeText(InicioSesionActivity.this, "Successfull", Toast.LENGTH_LONG).show();
+                                JSONObject dataRes = obj.getJSONObject("data");
+                                Toast.makeText(InicioSesionActivity.this, "Bienvenid@ "+dataRes.getString("nombre"), Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(getBaseContext(), MainActivity.class));
-                                Log.i("status======>", data);
+                                //Clear login
+                                txtLoginCorreo.setText("");
+                                txtLoginContrasenia.setText("");
                             }
                             else {
                                 Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
                             }
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

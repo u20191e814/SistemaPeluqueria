@@ -32,7 +32,7 @@
         />
 
     <EditText
-        android:id="@+id/txtLoginContraseña"
+        android:id="@+id/txtLoginContrasenia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"

@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.sistemapeluqueria.model.RegisterModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,52 +48,49 @@ public class RegistrarClienteActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Patrón para validar el email
-                Pattern pattern = Pattern
-                        .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 
-                // El email a validar
-                String nombre = txtNombreRegistrar.getText().toString();
-                String apellido = txtApellidoRegistar.getText().toString();
-                String telefono = txtTelefonoRegistrar.getText().toString();
-                String email = txtEmailRegistrar.getText().toString();
-                String clave = txtClaveRegistrar.getText().toString();
+                RegisterModel userRegister = new RegisterModel(
+                        txtNombreRegistrar.getText().toString(),
+                        txtApellidoRegistar.getText().toString(),
+                        txtTelefonoRegistrar.getText().toString(),
+                        txtEmailRegistrar.getText().toString(),
+                        txtClaveRegistrar.getText().toString()
+                );
 
-                Log.i("email======>", email);
-                Matcher mather = pattern.matcher(email);
-                if (email.isEmpty()|| nombre.isEmpty()|| apellido.isEmpty()|| telefono.isEmpty()|| clave.isEmpty()) {
-                    Log.i("email en blanco======>", email);
-                    Toast.makeText(getApplicationContext(), "Todos los campos es requerido.", Toast.LENGTH_LONG).show();
+                if (userRegister.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), userRegister.getMessageValidation(), Toast.LENGTH_LONG).show();
 
-                } else if (mather.find() == true){
-                    Log.i("email valido======>", email);
-                    createUser("http://3.145.140.134:9090/api/peluqueria/client");
+                }else if (userRegister.validatePhone()){
+                    Toast.makeText(getApplicationContext(), userRegister.getMessageValidation(), Toast.LENGTH_LONG).show();
+                }else if (userRegister.validateEmail()){
+                    createUser(userRegister);
                 }else {
-                    Toast.makeText(getApplicationContext(), "El email ingresado es inválido.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), userRegister.getMessageValidation(), Toast.LENGTH_LONG).show();
                 }
             }
         });
 
     }
 
-    public void createUser(String URL){
+    public void createUser(RegisterModel userRegister){
+
+        String url = "http://3.145.140.134:9090/api/peluqueria/client";
 
         JSONObject jsonobject = new JSONObject();
         try {
 
-            jsonobject.put("nombre", txtNombreRegistrar.getText().toString());
-            jsonobject.put("apellido", txtApellidoRegistar.getText().toString());
-            jsonobject.put("telefono", txtTelefonoRegistrar.getText().toString());
-            jsonobject.put("correo", txtEmailRegistrar.getText().toString());
-            jsonobject.put("clave", txtClaveRegistrar.getText().toString());
+            jsonobject.put("nombre", userRegister.getNombre());
+            jsonobject.put("apellido", userRegister.getApellido());
+            jsonobject.put("telefono", userRegister.getTelefono());
+            jsonobject.put("correo", userRegister.getEmail());
+            jsonobject.put("clave", userRegister.getClave());
             Log.i("json======>", jsonobject.toString());
         } catch (JSONException e) {
             Log.i("errorjon======>", e.getMessage());
         }
 
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
-                URL, jsonobject,
+                url, jsonobject,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -102,14 +100,15 @@ public class RegistrarClienteActivity extends AppCompatActivity {
                         try {
                             JSONObject obj = new JSONObject(response.toString());
                             Integer data = obj.getInt("data");
-
+                            if (data == 0){
+                                Toast.makeText(RegistrarClienteActivity.this, "El correo registrado ya existe", Toast.LENGTH_LONG).show();
+                            }
                             if (data > 0){
                                 Toast.makeText(RegistrarClienteActivity.this, "New Register Successfull", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(getBaseContext(), InicioSesionActivity.class));
-                                Log.i("status======>", data.toString());
                             }
                             else {
-                                Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Server error", Toast.LENGTH_SHORT).show();
                             }
 
                         } catch (JSONException e) {
@@ -120,7 +119,7 @@ public class RegistrarClienteActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(RegistrarClienteActivity.this, "server error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegistrarClienteActivity.this, "Server error", Toast.LENGTH_SHORT).show();
                         Log.i("error======>", error.getMessage());
                     }
                 }
