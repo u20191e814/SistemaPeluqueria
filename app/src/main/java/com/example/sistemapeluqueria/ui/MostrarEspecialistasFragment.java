@@ -66,6 +66,9 @@ public class MostrarEspecialistasFragment extends Fragment
     private ArrayAdapter<ubicacionModel>  adapterprovincia;
     private List<ubicacionModel> listaProvincia ;
 
+    private ArrayAdapter<ubicacionModel>  adapterdistrito;
+    private List<ubicacionModel> listaDistrito ;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -137,13 +140,8 @@ public class MostrarEspecialistasFragment extends Fragment
                   if (ub.getId()==-1){
                       listaProvincia = new ArrayList<>();
                       listaProvincia.add(new ubicacionModel(-1,"Todos"));
-                      //listaProvincia.add(new ubicacionModel(1,"Lima"));
                       adapterprovincia = new ArrayAdapter<>(v.getContext(), androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item, listaProvincia);
                       provincia.setAdapter(adapterprovincia);
-                      //listaProvincia = new ArrayList<>();
-                      //listaProvincia.add(new ubicacionModel(-1,"Todos"));
-                      //adapterprovincia.notifyDataSetChanged();
-
                   }
                   else{
                       RequestQueue requestQueue= Volley.newRequestQueue(v.getContext());
@@ -157,7 +155,7 @@ public class MostrarEspecialistasFragment extends Fragment
                               try
                               {
                                   listaProvincia = new ArrayList<>();
-                                  //listaProvincia.clear();
+
                                   JSONObject OB = new JSONObject(response);
                                   String estado= OB.getString("status");
                                   if (!estado.equals("OK")) {
@@ -174,11 +172,9 @@ public class MostrarEspecialistasFragment extends Fragment
                                       JSONObject object = jsonArray.getJSONObject(i);
                                       ubicacionModel reg =  new ubicacionModel(object.getInt("id"), object.getString("nombre"));
                                       listaProvincia.add(reg);
-                                      //Log.i("servicio2", reg.getNombre());
+
                                   }
 
-                                 // listaProvincia.add(new ubicacionModel(-1,"Todos"));
-                                  //listaProvincia.add(new ubicacionModel(1,"Lima"));
                                   adapterprovincia = new ArrayAdapter<>(v.getContext(), androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item, listaProvincia);
                                   provincia.setAdapter(adapterprovincia);
 
@@ -207,6 +203,77 @@ public class MostrarEspecialistasFragment extends Fragment
 
             }
         });
+
+        provincia.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                ubicacionModel ub=  (ubicacionModel) adapterView.getSelectedItem();
+                if (ub.getId()==-1){
+                    listaDistrito = new ArrayList<>();
+                    listaDistrito.add(new ubicacionModel(-1,"Todos"));
+                    adapterdistrito = new ArrayAdapter<>(v.getContext(), androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item, listaProvincia);
+                    distrito.setAdapter(adapterdistrito);
+                }
+                else{
+                    RequestQueue requestQueue= Volley.newRequestQueue(v.getContext());
+
+                    String url = webServicio.dominio_servicio+ "api/peluqueria/getDistrict?id_province="+ub.getId();
+                    StringRequest stringRequest= new StringRequest(Request.Method.GET, url, new Response.Listener<String>()
+                    {
+
+                        @Override public void onResponse(String response)
+                        {
+                            try
+                            {
+                                listaDistrito = new ArrayList<>();
+
+                                JSONObject OB = new JSONObject(response);
+                                String estado= OB.getString("status");
+                                if (!estado.equals("OK")) {
+                                    Toast toast = Toast.makeText(getContext(), OB.getString("statusMessage"), Toast.LENGTH_SHORT);
+                                    toast.show();
+                                }
+                                JSONArray jsonArray = OB.getJSONArray("data");
+
+
+
+                                for (int i = 0; i<jsonArray.length(); i++)
+                                {
+
+                                    JSONObject object = jsonArray.getJSONObject(i);
+                                    ubicacionModel reg =  new ubicacionModel(object.getInt("id"), object.getString("nombre"));
+                                    listaDistrito.add(reg);
+
+                                }
+
+                                adapterdistrito = new ArrayAdapter<>(v.getContext(), androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item, listaDistrito);
+                                distrito.setAdapter(adapterdistrito);
+
+
+                            }
+                            catch (JSONException e)
+                            {
+                                Log.i("======> e", e.getMessage());
+                            }
+                        }
+                    }, new Response.ErrorListener()
+                    {
+                        @Override public void onErrorResponse(VolleyError error)
+                        {
+                            Log.i("====> e", error.toString());
+                        }
+                    } );
+
+                    requestQueue.add(stringRequest);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         listacEspecialistas = new ArrayList<>();
         listacEspecialistas.add(new MostrarEspecialistaModel(1, "Luisa Ramirez",100, "Av. Javier prado 400", -12.4000, -10.300, 2,1));
         listacEspecialistas.add(new MostrarEspecialistaModel(2, "Martha Perez",100, "Av. via expresa ", -12.4000, -10.300, 3,1));
