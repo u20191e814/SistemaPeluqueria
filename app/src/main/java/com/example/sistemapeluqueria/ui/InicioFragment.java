@@ -129,10 +129,6 @@ public class InicioFragment extends Fragment {
             }
         } );
 
-       // RequestQueue queue = MySingleton.getInstance(getContext()).
-       //         getRequestQueue();
-        //MySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
-
         requestQueue.add(stringRequest);
 
 
