@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -69,15 +72,20 @@ public class MostrarEspecialistasFragment extends Fragment
     private ArrayAdapter<ubicacionModel>  adapterdistrito;
     private List<ubicacionModel> listaDistrito ;
 
+    private Button btnbuscar ;
+    private TextView lblverEnMapa ;
+    private String data;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_mostrar_especialistas, container, false);
-
+        lblverEnMapa= v.findViewById(R.id.lblverEnMapaEspecialistas);
         region = v.findViewById(R.id.cboRegionMostrarEspecialistas);
         provincia= v.findViewById(R.id.cboProvinciaMostrarEspecialistas);
         distrito= v.findViewById(R.id.cboDistritoMostrarEspecialistas);
+        btnbuscar= v.findViewById(R.id.btnBuscarEspecialistas);
         listaRegion = new ArrayList<>();
        // listaRegion.add(new ubicacionModel(1,"Lima"));
         adapterregion = new ArrayAdapter<>(v.getContext(), androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item, listaRegion);
@@ -195,7 +203,7 @@ public class MostrarEspecialistasFragment extends Fragment
 
                       requestQueue.add(stringRequest);
                   }
-                  Log.i("log", ub.getNombre() + " "+ ub.getId() );
+                 // Log.i("log", ub.getNombre() + " "+ ub.getId() );
             }
 
             @Override
@@ -234,16 +242,11 @@ public class MostrarEspecialistasFragment extends Fragment
                                     toast.show();
                                 }
                                 JSONArray jsonArray = OB.getJSONArray("data");
-
-
-
                                 for (int i = 0; i<jsonArray.length(); i++)
                                 {
-
                                     JSONObject object = jsonArray.getJSONObject(i);
                                     ubicacionModel reg =  new ubicacionModel(object.getInt("id"), object.getString("nombre"));
                                     listaDistrito.add(reg);
-
                                 }
 
                                 adapterdistrito = new ArrayAdapter<>(v.getContext(), androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item, listaDistrito);
@@ -275,8 +278,9 @@ public class MostrarEspecialistasFragment extends Fragment
         });
 
         listacEspecialistas = new ArrayList<>();
-        listacEspecialistas.add(new MostrarEspecialistaModel(1, "Luisa Ramirez",100, "Av. Javier prado 400", -12.4000, -10.300, 2,1));
-        listacEspecialistas.add(new MostrarEspecialistaModel(2, "Martha Perez",100, "Av. via expresa ", -12.4000, -10.300, 3,1));
+        //listacEspecialistas.add(new MostrarEspecialistaModel(1, "Luisa Ramirez",100, "Av. Javier prado 400", -12.4000, -10.300, 2,1));
+        //listacEspecialistas.add(new MostrarEspecialistaModel(2, "Martha Perez",100, "Av. via expresa ", -12.4000, -10.300, 3,1));
+
         adaptador = new MostrarEspecialistaAdapter(listacEspecialistas);
         recyclerView = v.findViewById(R.id.recycleMostrarEspecialistas);
 
@@ -284,7 +288,89 @@ public class MostrarEspecialistasFragment extends Fragment
         recyclerView.setLayoutManager(LayoutManager);
 
         recyclerView.setAdapter(adaptador);
+        btnbuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                ubicacionModel prov= (ubicacionModel)provincia.getSelectedItem();
+                ubicacionModel dist= (ubicacionModel)distrito.getSelectedItem();
+
+                RequestQueue requestQueue= Volley.newRequestQueue(v.getContext());
+
+                String url = webServicio.dominio_servicio+ "api/peluqueria/getEspecialistas?id_categoria="+id_categoria +"&id_provincia="+prov.getId()+ "&id_distrito="+ dist.getId();
+                StringRequest stringRequest= new StringRequest(Request.Method.GET, url, new Response.Listener<String>()
+                {
+
+                    @Override public void onResponse(String response)
+                    {
+                        try
+                        {
+                            listacEspecialistas = new ArrayList<>();
+                            JSONObject OB = new JSONObject(response);
+                            String estado= OB.getString("status");
+                            if (!estado.equals("OK")) {
+                                Toast toast = Toast.makeText(getContext(), OB.getString("statusMessage"), Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                           data = OB.getString("data");
+                            JSONArray jsonArray = OB.getJSONArray("data");
+
+                            for (int i = 0; i<jsonArray.length(); i++)
+                            {
+
+                                JSONObject o = jsonArray.getJSONObject(i);
+                                MostrarEspecialistaModel reg =  new MostrarEspecialistaModel( o.getInt("pk_especialistas"), o.getString("nombre"), o.getString("imagenBase64"),
+                                        o.getString("direccion"), o.getDouble("latitud"), o.getDouble("longitud"),o.getInt("calificacion"), o.getInt("fk_categoria"), nombre_categoria);
+                                listacEspecialistas.add(reg);
+                                //Log.i("servicio", reg.getNombre());
+                            }
+
+                            adaptador = new MostrarEspecialistaAdapter(listacEspecialistas);
+                            recyclerView = v.findViewById(R.id.recycleMostrarEspecialistas);
+
+                            LayoutManager = new LinearLayoutManager(requireContext());
+                            recyclerView.setLayoutManager(LayoutManager);
+
+                            recyclerView.setAdapter(adaptador);
+                            //adaptador.notifyDataSetChanged();
+
+                        }
+                        catch (JSONException e)
+                        {
+                            Log.i("======> e", e.getMessage());
+                        }
+                    }
+                }, new Response.ErrorListener()
+                {
+                    @Override public void onErrorResponse(VolleyError error)
+                    {
+                        Log.i("====> e", error.toString());
+                    }
+                } );
+
+                requestQueue.add(stringRequest);
+
+
+            }
+        });
+
+        lblverEnMapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (data !=null && !data.isEmpty() && !data.equals("[]"))
+                {
+                    Bundle b = new Bundle();
+                    b.putString("especialistas", data);
+                    NavController nav = Navigation.findNavController(view);
+                    nav.navigate(R.id.navverespecilistasEnMapa,b);
+                }
+                else
+                {
+                    Toast.makeText(view.getContext(), "No se encontrarón especialistas", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
         return v;
 
     }

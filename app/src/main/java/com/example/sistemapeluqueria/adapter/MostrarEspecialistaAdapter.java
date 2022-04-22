@@ -1,6 +1,9 @@
 package com.example.sistemapeluqueria.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,13 +44,22 @@ public class MostrarEspecialistaAdapter extends RecyclerView.Adapter<MostrarEspe
             Context context = holder.itemView.getContext();
             String nombre = listacEspecialistas.get(position).getNombre();
             String direccion = listacEspecialistas.get(position).getDireccion();
-            int imagen=listacEspecialistas.get(position).getImagen();
+            //int imagen=listacEspecialistas.get(position).getImagen();
             int calificacion = listacEspecialistas.get(position).getCalificacion();
+            String mostrarEspecialista = listacEspecialistas.get(position).getCategoria();
+            String imgBase64 = listacEspecialistas.get(position).getImagen();
+
 
 
             holder.nombre.setText(nombre);
             holder.direccion.setText(direccion);
             holder.Calificacion.setRating(calificacion);
+            holder.MostrarEspecialistas.setText(mostrarEspecialista);
+
+            byte[] decodedString = Base64.decode(imgBase64, Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            holder.imagen.setImageBitmap(decodedByte);
+
             //holder.imagen.setImageDrawable(ContextCompat.getDrawable(context,imagen));
 
 

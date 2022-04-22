@@ -61,7 +61,7 @@ public String data_Login ;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_inicio, R.id.navMiCuenta, R.id.navmostrarEspecialista, R.id.navverespecilistasEnMapa )
+                R.id.nav_inicio, R.id.navMiCuenta )
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

@@ -73,6 +73,10 @@ public class InicioFragment extends Fragment {
         recyclerView.setAdapter(adaptador);
 
 
+        //Log.i("Peinado", R.mipmap.imagenpeinado +"");
+        //Log.i("Cortes", R.mipmap.imagencortes +"");
+        //Log.i("maquillaje", R.mipmap.imagenmaquillaje +"");
+        //Log.i("Cejas", R.mipmap.imagencejas +"");
         return  s;
     }
 
@@ -98,11 +102,6 @@ public class InicioFragment extends Fragment {
                     toast.show();
                 }
                 JSONArray jsonArray = OB.getJSONArray("data");
-
-                //listaCategorias.add(new CategoryModel(1, "Peinados", R.mipmap.imagenpeinado));
-                // listaCategorias.add(new CategoryModel(2,"Cortes", R.mipmap.imagencortes));
-                // listaCategorias.add(new CategoryModel(3, "Maquillaje", R.mipmap.imagenmaquillaje));
-                // listaCategorias.add(new CategoryModel( 4,"Cejas", R.mipmap.imagencejas));
 
                for (int i = 0; i<jsonArray.length(); i++)
                 {
@@ -131,8 +130,6 @@ public class InicioFragment extends Fragment {
 
         requestQueue.add(stringRequest);
 
-
-        //navController = Navigation.findNavController(requireActivity(),R.id.nav_host_fragment_content_main);
 
     }
 

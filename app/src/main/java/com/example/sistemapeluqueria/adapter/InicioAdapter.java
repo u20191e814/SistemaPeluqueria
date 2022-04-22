@@ -22,7 +22,7 @@ import java.util.List;
 public class InicioAdapter extends RecyclerView.Adapter<InicioAdapter.ViewHolder>
 
 {
-    private View.OnClickListener listener;
+
     private final List<CategoryModel> listacategorias;
 
     public InicioAdapter(List<CategoryModel> listaCategorias) {
@@ -49,13 +49,7 @@ public class InicioAdapter extends RecyclerView.Adapter<InicioAdapter.ViewHolder
         holder.nombre.setText(nombre);
 
         holder.imagen.setImageDrawable(ContextCompat.getDrawable(context,rutaImagen));
-        //holder.itemView.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View view) {
-        //        Log.i("Click", nombre);
-        //        Navigation.findNavController(view).navigate(R.id.navmostrarEspecialista);
-        //    }
-        //});
+
 
         holder.itemView.setOnClickListener(v->{
             Bundle b = new Bundle();

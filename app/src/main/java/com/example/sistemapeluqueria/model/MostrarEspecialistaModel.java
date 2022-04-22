@@ -8,9 +8,11 @@ public class MostrarEspecialistaModel {
     private  double  Longitud;
     private  int Calificacion;
     private  int fk_categoria;
-    private  int imagen;
+    private  String imagen;
+    private  String categoria ;
 
-public MostrarEspecialistaModel(int id_especialista, String nombre,int imagen,String direccion,double latitud,double Longitud,int Calificacion,int fk_categoria){
+
+public MostrarEspecialistaModel(int id_especialista, String nombre,String imagen,String direccion,double latitud,double Longitud,int Calificacion,int fk_categoria, String categoria){
     this.id_especialista=id_especialista;
     this.nombre = nombre;
     this.direccion=direccion;
@@ -19,8 +21,25 @@ public MostrarEspecialistaModel(int id_especialista, String nombre,int imagen,St
     this.Calificacion=Calificacion;
     this.fk_categoria=fk_categoria;
     this.imagen=imagen;
+    this.categoria=categoria;
 
 }
+
+    public void setLatitud(double latitud) {
+        Latitud = latitud;
+    }
+
+    public void setLongitud(double longitud) {
+        Longitud = longitud;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
 
     public int getId_especialista() {
         return id_especialista;
@@ -82,11 +101,11 @@ public MostrarEspecialistaModel(int id_especialista, String nombre,int imagen,St
         this.fk_categoria = fk_categoria;
     }
 
-    public int getImagen() {
+    public String getImagen() {
         return imagen;
     }
 
-    public void setImagen(int imagen) {
+    public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 

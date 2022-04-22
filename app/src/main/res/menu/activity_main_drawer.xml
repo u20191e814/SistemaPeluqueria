@@ -19,10 +19,7 @@
             />
 
 
-        <item
-            android:id="@+id/navverespecilistasEnMapa"
-            android:title="Especialistas en Mapa"
-            />
+
         <item
             android:id="@+id/navContratarServicio"
             android:title="Contratar Servicio"
