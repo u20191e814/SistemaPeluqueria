@@ -65,6 +65,8 @@ public class VerEspecialistaEnMapaFragment extends Fragment {
                     //}
                 //});
 
+
+                googleMap.getUiSettings().setZoomControlsEnabled(true);
                 MostrarEspecialistaModel m= listaEspecialistas.get(0);
                 LatLng centro = new LatLng(m.getlatitud(), m.getLongitud());
                 for (int i = 0; i<listaEspecialistas.size(); i++){

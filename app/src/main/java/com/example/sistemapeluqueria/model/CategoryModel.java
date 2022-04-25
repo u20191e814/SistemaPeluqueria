@@ -3,10 +3,10 @@ package com.example.sistemapeluqueria.model;
 public class CategoryModel {
     private int Id_categoria;
     private  String nombre;
-    private  int rutaImagen;
+    private  String rutaImagen;
 
 
-    public CategoryModel( int Id_categoria,   String nombre, int rutaImagen) {
+    public CategoryModel( int Id_categoria,   String nombre, String rutaImagen) {
         this.nombre = nombre;
         this.rutaImagen = rutaImagen;
         this.Id_categoria = Id_categoria;
@@ -28,11 +28,11 @@ public class CategoryModel {
         this.nombre = nombre;
     }
 
-    public int getRutaImagen() {
+    public String getRutaImagen() {
         return rutaImagen;
     }
 
-    public void setRutaImagen(int rutaImagen) {
+    public void setRutaImagen(String rutaImagen) {
         this.rutaImagen = rutaImagen;
     }
 }

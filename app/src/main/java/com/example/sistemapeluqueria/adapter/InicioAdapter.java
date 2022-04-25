@@ -1,7 +1,10 @@
 package com.example.sistemapeluqueria.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,14 +45,16 @@ public class InicioAdapter extends RecyclerView.Adapter<InicioAdapter.ViewHolder
     public void onBindViewHolder(@NonNull InicioAdapter.ViewHolder holder,  int position) {
        Context context = holder.itemView.getContext();
         String nombre = listacategorias.get(position).getNombre();
-        int rutaImagen = listacategorias.get(position).getRutaImagen();
+        String rutaImagen = listacategorias.get(position).getRutaImagen();
         int id = listacategorias.get(position).getId_categoria();
 
 
         holder.nombre.setText(nombre);
 
-        holder.imagen.setImageDrawable(ContextCompat.getDrawable(context,rutaImagen));
-
+        //holder.imagen.setImageDrawable(ContextCompat.getDrawable(context,rutaImagen));
+        byte[] decodedString = Base64.decode(rutaImagen, Base64.DEFAULT);
+        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+        holder.imagen.setImageBitmap(decodedByte);
 
         holder.itemView.setOnClickListener(v->{
             Bundle b = new Bundle();

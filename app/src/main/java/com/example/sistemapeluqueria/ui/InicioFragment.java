@@ -102,12 +102,12 @@ public class InicioFragment extends Fragment {
                     toast.show();
                 }
                 JSONArray jsonArray = OB.getJSONArray("data");
-
+                //Log.i("Json", OB.getString("data"));
                for (int i = 0; i<jsonArray.length(); i++)
                 {
 
                     JSONObject object = jsonArray.getJSONObject(i);
-                    CategoryModel categoria =  new CategoryModel(object.getInt("pk_categoria"), object.getString("nombre"), object.getInt("codeImagen"));
+                    CategoryModel categoria =  new CategoryModel(object.getInt("pk_categoria"), object.getString("nombre"), object.getString("imagenCat"));
                     listaCategorias.add(categoria);
                     //Log.i("servicio", categoria.getId_categoria() +" " + categoria.getNombre() + "  " + categoria.getRutaImagen());
                 }
