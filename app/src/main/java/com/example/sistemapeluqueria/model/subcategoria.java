@@ -47,7 +47,6 @@ public class subcategoria {
 
     @Override
     public String toString() {
-        return   nombre
-                 ;
+        return   nombre  ;
     }
 }
