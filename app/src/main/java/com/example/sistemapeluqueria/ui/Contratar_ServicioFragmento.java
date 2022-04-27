@@ -82,8 +82,6 @@ public class Contratar_ServicioFragmento extends Fragment {
                     JSONArray jsonArray = OB.getJSONArray("data");
 
                     String data = OB.getString("data");
-
-                    Log.i("respuesta", data);
                     for (int i = 0; i<jsonArray.length(); i++)
                     {
 
