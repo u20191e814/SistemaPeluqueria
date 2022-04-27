@@ -84,7 +84,6 @@ public class Contratar_ServicioFragmento extends Fragment {
                     String data = OB.getString("data");
                     for (int i = 0; i<jsonArray.length(); i++)
                     {
-
                         JSONObject object = jsonArray.getJSONObject(i);
                         subcategoria reg =  new subcategoria(object.getInt("pk_subCategoria"), object.getString("nombre"), object.getInt("fk_categoria"), object.getDouble("precio"));
                         listasubcategoria.add(reg);
