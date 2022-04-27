@@ -13,10 +13,10 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/txtNombrePersonalContratarServicio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:text="@string/jessica_ramirez"
             android:textAlignment="center"
             android:textSize="9pt"
@@ -28,13 +28,26 @@
 
         <TextView
             android:id="@+id/txtEspecialidadMostrarCategoria"
-            android:layout_width="139dp"
-            android:layout_height="19dp"
+            android:layout_width="105dp"
+            android:layout_height="25dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/sub_categoria"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/txtNombrePersonalContratarServicio" />
+
+        <Spinner
+            android:id="@+id/cboSubCategoria"
+
+            android:layout_width="192dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="32dp"
+
+            android:layout_marginTop="8dp"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toEndOf="@+id/txtEspecialidadMostrarCategoria"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombrePersonalContratarServicio"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/lblEspecialidadMostrarEspecialistas"
@@ -117,158 +130,148 @@
             android:layout_width="116dp"
             android:layout_height="101dp"
             android:layout_marginStart="52dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="93dp"
             android:contentDescription="@string/todo"
             android:src="@mipmap/imgcodigodebarra_foreground"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/txtNombreMostrarEspecialistas"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.706" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
 
         <EditText
             android:id="@+id/editTextNumber"
-            android:layout_width="170dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="30dp"
+            android:layout_width="186dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="37dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/ingresar_precio"
             android:inputType="number"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.69"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.155" />
+            app:layout_constraintStart_toEndOf="@+id/lblEspecialidadMostrarEspecialistas"
+            app:layout_constraintTop_toBottomOf="@+id/cboSubCategoria" />
 
         <EditText
             android:id="@+id/editTextNumber2"
             android:layout_width="170dp"
             android:layout_height="48dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="55dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/ingresar_cantidad"
             android:inputType="number"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.177"
             app:layout_constraintStart_toEndOf="@+id/lblDireccionMostrarEspecialistas"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.225" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
 
         <EditText
             android:id="@+id/editTextTextPersonName4"
             android:layout_width="171dp"
             android:layout_height="48dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="54dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/ingresar_direccion"
             android:inputType="textPersonName"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.119"
             app:layout_constraintStart_toEndOf="@+id/textView9"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.565" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTime" />
 
         <EditText
             android:id="@+id/editTextNumber3"
             android:layout_width="170dp"
             android:layout_height="48dp"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="55dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/ingresar_total"
             android:inputType="number"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.687"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.311" />
+            app:layout_constraintStart_toEndOf="@+id/txtDireccionMostrarEspecialistas"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
 
         <EditText
             android:id="@+id/editTextDate"
             android:layout_width="170dp"
             android:layout_height="48dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="53dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/ingresar_fecha"
             android:inputType="date"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.177"
             app:layout_constraintStart_toEndOf="@+id/textView7"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.396" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumber3" />
 
         <EditText
             android:id="@+id/editTextTime"
             android:layout_width="170dp"
             android:layout_height="48dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="55dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/ingresar_hora"
             android:inputType="time"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.177"
             app:layout_constraintStart_toEndOf="@+id/textView8"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.478" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
         <EditText
             android:id="@+id/editTextTextPersonName5"
             android:layout_width="190dp"
             android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="36dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/constancia_de_pago"
             android:inputType="textPersonName"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.817"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.818" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView42"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <Button
             android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Contratar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.994" />
+            app:layout_constraintTop_toBottomOf="@+id/textView41"
+            app:layout_constraintVertical_bias="0.157" />
 
         <TextView
             android:id="@+id/textView41"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="Los servicios adicionales se coordinarán directamente con el personal."
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.453"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.901" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
 
         <TextView
             android:id="@+id/textView42"

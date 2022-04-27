@@ -4,56 +4,50 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.sistemapeluqueria.R;
+import com.example.sistemapeluqueria.controladores.webServicio;
+import com.example.sistemapeluqueria.model.subcategoria;
+import com.example.sistemapeluqueria.model.ubicacionModel;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Contratar_ServicioFragmento#newInstance} factory method to
- * create an instance of this fragment.
- */
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Contratar_ServicioFragmento extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public Contratar_ServicioFragmento() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Contratar_Servicio.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Contratar_ServicioFragmento newInstance(String param1, String param2) {
-        Contratar_ServicioFragmento fragment = new Contratar_ServicioFragmento();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    private String nombre ;
+    private int fk_categoria;
+    private int pk_personal;
+    private Spinner cbosubcategoria;
+    private List<subcategoria> listasubcategoria ;
+    private ArrayAdapter<subcategoria>  adapterSubCategoria;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            nombre = getArguments().getString("nombre");
+            fk_categoria = getArguments().getInt("fk_categoria");
+            pk_personal= getArguments().getInt("pk_personal");
         }
     }
 
@@ -61,7 +55,66 @@ public class Contratar_ServicioFragmento extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contratar__servicio, container, false);
+        View r = inflater.inflate(R.layout.fragment_contratar__servicio, container, false);
+        TextView nombrePersonal = r.findViewById(R.id.txtNombrePersonalContratarServicio);
+        cbosubcategoria= r.findViewById(R.id.cboSubCategoria);
+        listasubcategoria = new ArrayList<>();
+
+        adapterSubCategoria = new ArrayAdapter<>(r.getContext(), androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item, listasubcategoria);
+        cbosubcategoria.setAdapter(adapterSubCategoria);
+        RequestQueue requestQueue= Volley.newRequestQueue(r.getContext());
+
+        String url = webServicio.dominio_servicio+ "api/peluqueria/getsubCategoria?fk_categoria="+fk_categoria;
+        StringRequest stringRequest= new StringRequest(Request.Method.GET, url, new Response.Listener<String>()
+        {
+
+            @Override public void onResponse(String response)
+            {
+                try
+                {
+                    listasubcategoria.clear();
+                    JSONObject OB = new JSONObject(response);
+                    String estado= OB.getString("status");
+                    if (!estado.equals("OK")) {
+                        Toast toast = Toast.makeText(getContext(), OB.getString("statusMessage"), Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                    JSONArray jsonArray = OB.getJSONArray("data");
+
+                    String data = OB.getString("data");
+
+                    Log.i("respuesta", data);
+                    for (int i = 0; i<jsonArray.length(); i++)
+                    {
+
+                        JSONObject object = jsonArray.getJSONObject(i);
+                        subcategoria reg =  new subcategoria(object.getInt("pk_subCategoria"), object.getString("nombre"), object.getInt("fk_categoria"), object.getDouble("precio"));
+                        listasubcategoria.add(reg);
+
+                    }
+
+                    adapterSubCategoria.notifyDataSetChanged();
+
+                }
+                catch (JSONException e)
+                {
+                    Log.i("======> e", e.getMessage());
+                }
+            }
+        }, new Response.ErrorListener()
+        {
+            @Override public void onErrorResponse(VolleyError error)
+            {
+                Log.i("====> e", error.toString());
+            }
+        } );
+
+        requestQueue.add(stringRequest);
+
+
+        nombrePersonal.setText(nombre);
+
+        return  r;
     }
     @Override
     public void onDestroyView() {
