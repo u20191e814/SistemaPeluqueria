@@ -64,7 +64,7 @@
                 android:text="Calle fernando wieland 171" />
 
             <EditText
-                android:id="@+id/editTextDate"
+                android:id="@+id/txtFechaContratarServicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"

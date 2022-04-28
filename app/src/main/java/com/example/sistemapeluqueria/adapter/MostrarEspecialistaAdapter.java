@@ -73,6 +73,8 @@ public class MostrarEspecialistaAdapter extends RecyclerView.Adapter<MostrarEspe
                 b.putString("nombre", nombre);
                 b.putInt("fk_categoria", fk_categoria);
                 b.putInt("pk_personal", pk_personal);
+                b.putString("mostrarEspecialista", mostrarEspecialista);
+
                 NavController nav = Navigation.findNavController(holder.itemView);
                 nav.navigate(R.id.navContratarServicio, b);
 

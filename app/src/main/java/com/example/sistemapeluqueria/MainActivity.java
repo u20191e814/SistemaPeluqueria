@@ -2,10 +2,12 @@ package com.example.sistemapeluqueria;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -38,7 +40,8 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 //implements NavigationView.OnNavigationItemSelectedListener
     private AppBarConfiguration mAppBarConfiguration;
-public String data_Login ;
+    public String data_Login ;
+    public int id_cliente ;
     private DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,14 @@ public String data_Login ;
 
         Intent intent = getIntent();
         data_Login = intent.getStringExtra("data");
+        try {
+            JSONObject obj = new JSONObject(data_Login);
+
+            id_cliente = obj.getInt("id_cliente");
+        }
+        catch (Throwable tx) {
+            Log.e("Main", "Error en parsear json ");
+        }
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
