@@ -3,7 +3,6 @@ package com.example.sistemapeluqueria.adapter;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.Bundle;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +13,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sistemapeluqueria.R;
@@ -51,8 +48,6 @@ public class MostrarEspecialistaAdapter extends RecyclerView.Adapter<MostrarEspe
             int calificacion = listacEspecialistas.get(position).getCalificacion();
             String mostrarEspecialista = listacEspecialistas.get(position).getCategoria();
             String imgBase64 = listacEspecialistas.get(position).getImagen();
-            int fk_categoria = listacEspecialistas.get(position).getFk_categoria();
-            int pk_personal = listacEspecialistas.get(position).getId_especialista();
 
 
 
@@ -68,17 +63,13 @@ public class MostrarEspecialistaAdapter extends RecyclerView.Adapter<MostrarEspe
             //holder.imagen.setImageDrawable(ContextCompat.getDrawable(context,imagen));
 
 
-            holder.itemView.setOnClickListener(v -> {
-                Bundle b = new Bundle();
-                b.putString("nombre", nombre);
-                b.putInt("fk_categoria", fk_categoria);
-                b.putInt("pk_personal", pk_personal);
-                b.putString("mostrarEspecialista", mostrarEspecialista);
+            //holder.itemView.setOnClickListener(v -> {
+            //    Bundle b = new Bundle();
+            //    b.putString("nombre", nombre);
+            //    NavController nav = Navigation.findNavController(holder.itemView);
+            //    nav.navigate(R.id.navmostrarEspecialista, b);
 
-                NavController nav = Navigation.findNavController(holder.itemView);
-                nav.navigate(R.id.navContratarServicio, b);
-
-            });
+            //});
 
         }
 

@@ -109,7 +109,7 @@ public class RegistrarClienteActivity extends AppCompatActivity {
                                 startActivity(new Intent(getBaseContext(), InicioSesionActivity.class));
                             }
                             else {
-                                Toast.makeText(getApplicationContext(), "Server error", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Server error", Toast.LENGTH_LONG).show();
                             }
 
                         } catch (JSONException e) {
@@ -120,7 +120,7 @@ public class RegistrarClienteActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(RegistrarClienteActivity.this, "Server error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegistrarClienteActivity.this, "Server error", Toast.LENGTH_LONG).show();
                         Log.i("error======>", error.getMessage());
                     }
                 }

@@ -19,7 +19,6 @@ import com.example.sistemapeluqueria.model.LoginModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.util.regex.Matcher;
 
 public class InicioSesionActivity extends AppCompatActivity {
 
@@ -51,7 +50,7 @@ public class InicioSesionActivity extends AppCompatActivity {
                 else  if (userLogin.validateEmail()) {
                     validarUsuario( userLogin);
                 } else {
-                    Toast.makeText(getApplicationContext(), "El email ingresado es inválido", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "El correo ingresado es inválido", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -96,7 +95,7 @@ public class InicioSesionActivity extends AppCompatActivity {
                                 txtLoginContrasenia.setText("");
                             }
                             else {
-                                Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrecta", Toast.LENGTH_LONG).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -106,7 +105,7 @@ public class InicioSesionActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(InicioSesionActivity.this, "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(InicioSesionActivity.this, "Usuario o contraseña incorrecta", Toast.LENGTH_LONG).show();
                         Log.i("error======>", error.getMessage());
                     }
                 }

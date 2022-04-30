@@ -2,12 +2,10 @@ package com.example.sistemapeluqueria;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -41,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //implements NavigationView.OnNavigationItemSelectedListener
     private AppBarConfiguration mAppBarConfiguration;
     public String data_Login ;
-    public int id_cliente ;
     private DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,14 +46,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Intent intent = getIntent();
         data_Login = intent.getStringExtra("data");
-        try {
-            JSONObject obj = new JSONObject(data_Login);
-
-            id_cliente = obj.getInt("id_cliente");
-        }
-        catch (Throwable tx) {
-            Log.e("Main", "Error en parsear json ");
-        }
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -72,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_inicio, R.id.navMiCuenta, R.id.nav_servicioscontratados )
+                R.id.nav_inicio, R.id.navMiCuenta )
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

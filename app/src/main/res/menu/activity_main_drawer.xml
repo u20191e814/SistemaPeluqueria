@@ -20,7 +20,10 @@
 
 
 
-         
+        <item
+            android:id="@+id/navContratarServicio"
+            android:title="Contratar Servicio"
+            />
 
         <item
             android:id="@+id/navCancelarServicio"
