@@ -45,6 +45,7 @@ public class MostrarServicioContratadoFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_mostrar_servicio_contratado, container, false);
         listaServicioContratado = new ArrayList<>();
+        //listaServicioContratado.add(new ContractedServiceModel("Jose", "Peluqueria", 100, "jajajja", "2022-12-08","Iniciado"));
         adaptador = new MostrarServicioContratadoAdapter(listaServicioContratado);
         recyclerView = v.findViewById(R.id.recycleMostrarServicioContratado);
 
@@ -104,7 +105,7 @@ public class MostrarServicioContratadoFragment extends Fragment {
                         listaServicioContratado.add(servicioContratado);
                     }
 
-                    //adaptador.notifyDataSetChanged();
+                    adaptador.notifyDataSetChanged();
                 }
                 catch (JSONException e)
                 {

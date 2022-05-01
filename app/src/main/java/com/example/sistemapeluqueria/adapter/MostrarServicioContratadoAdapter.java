@@ -33,14 +33,14 @@ public class MostrarServicioContratadoAdapter extends RecyclerView.Adapter<Mostr
         Context context = holder.itemView.getContext();
         String nombrePersonal = listaServicioContratado.get(position).getNombrePersonal();
         String nombreServicio = listaServicioContratado.get(position).getNombreServicio();
-        int total = listaServicioContratado.get(position).getTotal();
+        double total = listaServicioContratado.get(position).getTotal();
         String direccion = listaServicioContratado.get(position).getDireccion();
         String fecha = listaServicioContratado.get(position).getFecha();
         String estado = listaServicioContratado.get(position).getEstado();
 
-        holder.nombrePersonal.setText(nombrePersonal);
+       holder.nombrePersonal.setText(nombrePersonal);
         holder.nombreServicio.setText(nombreServicio);
-        holder.total.setText(total);
+        holder.total.setText(String.valueOf(total) );
         holder.direccion.setText(direccion);
         holder.fecha.setText(fecha);
         holder.estado.setText(estado);
@@ -65,7 +65,7 @@ public class MostrarServicioContratadoAdapter extends RecyclerView.Adapter<Mostr
             nombrePersonal= itemView.findViewById(R.id.txtNombreEspecialista);
             nombreServicio = itemView.findViewById(R.id.txtNombreServicioContratado);
             total = itemView.findViewById(R.id.txtPrecioTotalServicioContratado);
-            direccion = itemView.findViewById(R.id.txtDireccionMostrarEspecialistas);
+            direccion = itemView.findViewById(R.id.txtDireccionUsuarioSolicitado);
             fecha = itemView.findViewById(R.id.txtFechaServicioContratado);
             estado = itemView.findViewById(R.id.txtEstadoServicioContratado);
         }
