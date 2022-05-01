@@ -1,20 +1,32 @@
 package com.example.sistemapeluqueria.model;
 
 public class ContractedServiceModel {
+    private int pk_ContratarServicio;
     private String nombrePersonal;
     private String nombreServicio;
-    private int total;
+    private double total;
     private String direccion;
     private String fecha;
+    private String hora;
     private String estado;
 
-    public ContractedServiceModel(String nombrePersonal, String nombreServicio, int total, String direccion, String fecha, String estado) {
+    public ContractedServiceModel(int pk_ContratarServicio, String nombrePersonal, String nombreServicio, double total, String direccion, String fecha, String hora, String estado) {
+        this.pk_ContratarServicio = pk_ContratarServicio;
         this.nombrePersonal = nombrePersonal;
         this.nombreServicio = nombreServicio;
         this.total = total;
         this.direccion = direccion;
         this.fecha = fecha;
+        this.hora = hora;
         this.estado = estado;
+    }
+
+    public int getPk_ContratarServicio() {
+        return pk_ContratarServicio;
+    }
+
+    public void setPk_ContratarServicio(int pk_ContratarServicio) {
+        this.pk_ContratarServicio = pk_ContratarServicio;
     }
 
     public String getNombrePersonal() {
@@ -33,11 +45,11 @@ public class ContractedServiceModel {
         this.nombreServicio = nombreServicio;
     }
 
-    public int getTotal() {
+    public double getTotal() {
         return total;
     }
 
-    public void setTotal(int total) {
+    public void setTotal(double total) {
         this.total = total;
     }
 
@@ -55,6 +67,14 @@ public class ContractedServiceModel {
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
     }
 
     public String getEstado() {

@@ -55,6 +55,7 @@ public class MostrarServicioContratadoFragment extends Fragment {
         recyclerView.setAdapter(adaptador);
 
         Log.i("recyclerView2","");
+
         return v;
     }
 
@@ -101,7 +102,7 @@ public class MostrarServicioContratadoFragment extends Fragment {
                     {
                         JSONObject object = jsonArray.getJSONObject(i);
                         Log.i("object ==> ",object.toString());
-                        ContractedServiceModel servicioContratado =  new ContractedServiceModel(object.getString("nombrePersonal"), object.getString("nombreServicio"), object.getInt("total"), object.getString("direccion"), object.getString("fecha"), object.getString("estado"));
+                        ContractedServiceModel servicioContratado =  new ContractedServiceModel(object.getInt("pk_ContratarServicio"), object.getString("nombrePersonal"), object.getString("nombreServicio"), object.getInt("total"), object.getString("direccion"), object.getString("fecha"),object.getString("hora"), object.getString("estado"));
                         listaServicioContratado.add(servicioContratado);
                     }
 

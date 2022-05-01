@@ -2,7 +2,6 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardElevation="10dp"
@@ -14,15 +13,23 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-
+        <TextView
+            android:id="@+id/txtNombreEspecialistaSC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre de Especialista:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
         <TextView
             android:id="@+id/txtNombreEspecialista"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nombre Especialista"
             android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/txtNombreEspecialistaSC"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -36,32 +43,81 @@
             app:layout_constraintTop_toBottomOf="@+id/txtNombreEspecialista" />
 
         <TextView
+            android:id="@+id/txtPrecioTotalSC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Precio Total:  S/."
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombreServicioContratado" />
+
+        <TextView
             android:id="@+id/txtPrecioTotalServicioContratado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginStart="2dp"
             android:text="Precio Total"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/txtPrecioTotalSC"
             app:layout_constraintTop_toBottomOf="@+id/txtNombreServicioContratado" />
+
+        <TextView
+            android:id="@+id/txtDireccionUsuarioSC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Dirección del Cliente:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPrecioTotalServicioContratado" />
+
         <TextView
             android:id="@+id/txtDireccionUsuarioSolicitado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Direccion de Usuario Solicitado"
+            android:layout_marginStart="8dp"
+            android:text="Direccion de Usuario "
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtDireccionUsuarioSC"
             app:layout_constraintTop_toBottomOf="@+id/txtPrecioTotalServicioContratado" />
+
+        <TextView
+            android:id="@+id/txtFechaSC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Fecha y Hora de Atención:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDireccionUsuarioSolicitado" />
 
         <TextView
             android:id="@+id/txtFechaServicioContratado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Fecha de Servicio Contratado"
+            android:layout_marginStart="8dp"
+            android:text="Fecha"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtFechaSC"
+            app:layout_constraintTop_toBottomOf="@+id/txtDireccionUsuarioSolicitado" />
+
+        <TextView
+            android:id="@+id/txtHoraMostrarServicioContratado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Hora"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/txtFechaServicioContratado"
             app:layout_constraintTop_toBottomOf="@+id/txtDireccionUsuarioSolicitado" />
 
         <TextView
@@ -71,6 +127,7 @@
             android:layout_marginTop="12dp"
             android:text="Estado de Servicio Contratado"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtFechaServicioContratado" />
     </androidx.constraintlayout.widget.ConstraintLayout>
