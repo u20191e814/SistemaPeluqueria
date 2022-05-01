@@ -18,13 +18,6 @@
             android:title="@string/menu_servicioscontratados"
             />
 
-
-
-        <item
-            android:id="@+id/navContratarServicio"
-            android:title="Contratar Servicio"
-            />
-
         <item
             android:id="@+id/navCancelarServicio"
             android:title="Cancelar Servicio"
