@@ -104,7 +104,7 @@ public class MostrarServicioContratadoFragment extends Fragment {
                         listaServicioContratado.add(servicioContratado);
                     }
 
-                    adaptador.notifyDataSetChanged();
+                    //adaptador.notifyDataSetChanged();
                 }
                 catch (JSONException e)
                 {
