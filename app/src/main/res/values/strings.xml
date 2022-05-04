@@ -12,7 +12,7 @@
     <string name="menu_servicioscontratados">Servicios Contratados</string>
     <string name="menu_librodereclamaciones">Libro de reclamaciones</string>
     <!--<string name="menu_cerrarsession">Cerrar Sesión</string>-->
-   <!-- Strings related to login -->
+    <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -35,11 +35,6 @@
     <string name="mostrarcategoriasCejas">Cejas</string>
 
     <!-- string mostrar especialistas -->
-
-
-
-
-
 
 
     <!-- TODO: Remove or change this placeholder text -->
