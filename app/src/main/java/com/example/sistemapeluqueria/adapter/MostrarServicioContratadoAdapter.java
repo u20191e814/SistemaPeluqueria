@@ -44,6 +44,8 @@ public class MostrarServicioContratadoAdapter extends RecyclerView.Adapter<Mostr
         String hora = listaServicioContratado.get(position).getHora();
         String estado = listaServicioContratado.get(position).getEstado();
         int pk_ContratarServicio = listaServicioContratado.get(position).getPk_ContratarServicio();
+        double precio = listaServicioContratado.get(position).getPrecio();
+        int cantidad = listaServicioContratado.get(position).getCantidad();
 
 
         holder.nombrePersonal.setText(nombrePersonal);
@@ -65,6 +67,8 @@ public class MostrarServicioContratadoAdapter extends RecyclerView.Adapter<Mostr
                 b.putString("fecha", fecha);
                 b.putString("hora", hora);
                 b.putString("estado", estado);
+                b.putDouble("precio", precio);
+                b.putInt("cantidad", cantidad);
                 NavController nav = Navigation.findNavController(holder.itemView);
                 nav.navigate(R.id.navCancelarServicio,b);
             });

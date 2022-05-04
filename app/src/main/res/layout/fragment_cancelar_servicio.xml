@@ -13,110 +13,116 @@
         android:layout_height="match_parent">
 
         <EditText
-            android:id="@+id/editTextTextPersonName7"
+            android:id="@+id/editEstadoCancelar"
             android:layout_width="175dp"
             android:layout_height="50dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/pendiente"
-            android:textAlignment="center"
             android:inputType="textPersonName"
+            android:textAlignment="center"
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.601"
+            app:layout_constraintHorizontal_bias="0.806"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.787" />
+            app:layout_constraintVertical_bias="0.591" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName6"
+            android:id="@+id/editDireccionCancelar"
             android:layout_width="171dp"
             android:layout_height="48dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/villa_los_angeles"
-            android:textAlignment="center"
             android:inputType="textPersonName"
+            android:textAlignment="center"
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.591"
+            app:layout_constraintHorizontal_bias="0.79"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.691" />
+            app:layout_constraintVertical_bias="0.519" />
 
         <TextView
             android:id="@+id/textView39"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="32dp"
             android:text="@string/direccion"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.676" />
+            app:layout_constraintVertical_bias="0.517" />
 
         <EditText
-            android:id="@+id/editTextTime2"
+            android:id="@+id/editHoraCancelar"
             android:layout_width="170dp"
             android:layout_height="48dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/_14_30"
-            android:textAlignment="center"
             android:inputType="time"
+            android:textAlignment="center"
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.593"
+            app:layout_constraintHorizontal_bias="0.786"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.582" />
+            app:layout_constraintVertical_bias="0.449" />
 
         <TextView
             android:id="@+id/textView38"
             android:layout_width="100dp"
             android:layout_height="23dp"
+            android:layout_marginStart="32dp"
             android:text="@string/hora"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.573" />
+            app:layout_constraintVertical_bias="0.447" />
 
         <EditText
-            android:id="@+id/editTextDate4"
+            android:id="@+id/editFechaCancelar"
             android:layout_width="170dp"
             android:layout_height="48dp"
             android:layout_marginStart="30dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/_2022_08_08"
-            android:textAlignment="center"
             android:inputType="date"
+            android:textAlignment="center"
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.535"
+            app:layout_constraintHorizontal_bias="0.748"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.481" />
+            app:layout_constraintVertical_bias="0.379" />
 
         <TextView
             android:id="@+id/textView37"
             android:layout_width="100dp"
             android:layout_height="23dp"
+            android:layout_marginStart="32dp"
             android:text="@string/fecha"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.379" />
 
         <EditText
-            android:id="@+id/editTextNumber6"
+            android:id="@+id/editTotalCancelar"
             android:layout_width="170dp"
             android:layout_height="48dp"
             android:layout_marginStart="28dp"
@@ -128,56 +134,58 @@
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.563"
+            app:layout_constraintHorizontal_bias="0.751"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.396"
+            app:layout_constraintVertical_bias="0.308"
             tools:ignore="DuplicateSpeakableTextCheck" />
 
         <TextView
             android:id="@+id/textView36"
             android:layout_width="100dp"
             android:layout_height="23dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="32dp"
             android:text="@string/total"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.019"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.402" />
+            app:layout_constraintVertical_bias="0.316" />
 
         <EditText
-            android:id="@+id/editTextNumber5"
+            android:id="@+id/editCantidadCancelar"
             android:layout_width="170dp"
             android:layout_height="48dp"
             android:layout_marginStart="30dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/_1"
-            android:textAlignment="center"
             android:inputType="number"
+            android:textAlignment="center"
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.535"
+            app:layout_constraintHorizontal_bias="0.748"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.297" />
+            app:layout_constraintVertical_bias="0.238" />
 
         <TextView
             android:id="@+id/textView35"
             android:layout_width="100dp"
             android:layout_height="23dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="32dp"
             android:text="@string/cantidad"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.298" />
+            app:layout_constraintVertical_bias="0.245" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/editNombreServicioCancelar"
             android:layout_width="175dp"
             android:layout_height="50dp"
             android:autofillHints=""
@@ -187,54 +195,56 @@
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.605"
+            app:layout_constraintHorizontal_bias="0.806"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.092" />
 
         <EditText
-            android:id="@+id/editTextNumber4"
+            android:id="@+id/editPrecioCancelar"
             android:layout_width="170dp"
             android:layout_height="48dp"
             android:layout_marginStart="30dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/_100"
-            android:textAlignment="center"
             android:inputType="number"
+            android:textAlignment="center"
             android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.535"
+            app:layout_constraintHorizontal_bias="0.748"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.2" />
+            app:layout_constraintVertical_bias="0.165" />
 
         <TextView
             android:id="@+id/textView33"
             android:layout_width="100dp"
             android:layout_height="23dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="32dp"
             android:text="@string/precio"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.213" />
+            app:layout_constraintVertical_bias="0.176" />
 
         <TextView
             android:id="@+id/textView31"
-            android:layout_width="100dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="8dp"
+            android:layout_width="103dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="32dp"
             android:hint="@string/servicio_contratado"
             android:textColorHint="#757575"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.102" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/txtNombreEspecialistaCancelar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -251,39 +261,57 @@
             android:id="@+id/textView40"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:hint="@string/estados"
             android:textColorHint="#757575"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.043"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.782" />
+            app:layout_constraintVertical_bias="0.584" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnCancelarServicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/estadoCancelado"
             android:text="Cancelar Servicio"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintHorizontal_bias="0.483"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.959" />
+            app:layout_constraintVertical_bias="0.808" />
 
         <TextView
             android:id="@+id/textView34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Si cancela el servicio la devolución del pago será previa coordinacion con el personal contratado."
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.864" />
+            app:layout_constraintVertical_bias="0.693" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="193dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="62dp"
+            android:backgroundTint="@color/estadoCompletado"
+            android:text="Completar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnCancelarServicio"
+            app:layout_constraintVertical_bias="0.615" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
