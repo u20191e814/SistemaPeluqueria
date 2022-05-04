@@ -2,6 +2,8 @@ package com.example.sistemapeluqueria;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -16,10 +18,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.example.sistemapeluqueria.ui.InicioFragment;
 import com.example.sistemapeluqueria.ui.MiCuentaFragment;
 import com.example.sistemapeluqueria.ui.MostrarEspecialistasFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -42,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public String data_Login ;
     public int id_cliente ;
     private DrawerLayout drawer;
+    private NavController navController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,36 +77,52 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_inicio, R.id.navMiCuenta )
+                R.id.nav_inicio, R.id.navMiCuenta, R.id.nav_servicioscontratados )
                 .setOpenableLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+
+
+        Menu menu = navigationView.getMenu();
+        for (int i = 0; i < menu.size(); i ++){
+            MenuItem menuItem = menu.getItem(i);
+
+            if (menuItem.getTitle().equals("Cerrar Sesión")){
+
+                SpannableString spanString = new SpannableString(menuItem.getTitle().toString());
+                spanString.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.estadoCancelado)), 0, spanString.length(), 0);
+                menuItem.setTitle(spanString);
+
+            }
+
+        }
+
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        //navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this);
 
     }
+
+
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        drawer.closeDrawer(GravityCompat.START);
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction transaction = fm.beginTransaction();
-        item.setChecked(true);
+
+          item.setChecked(true);
         switch (id){
 
             case R.id.nav_inicio:
-                transaction.replace(R.id.nav_host_fragment_content_main, new InicioFragment());
-                transaction.commit();
+                navController.navigate(R.id.nav_inicio);
                 break;
             case R.id.navMiCuenta:
-
-                transaction.replace(R.id.nav_host_fragment_content_main, new MiCuentaFragment());
-                transaction.commit();
+                navController.navigate(R.id.navMiCuenta);
                 break;
+            case R.id.nav_servicioscontratados:
+               navController.navigate(R.id.nav_servicioscontratados);
+               break;
             case R.id.navcerrarsesion:
                 finish();
                 System.exit(0);

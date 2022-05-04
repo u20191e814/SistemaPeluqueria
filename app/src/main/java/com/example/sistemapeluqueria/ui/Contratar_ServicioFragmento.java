@@ -318,7 +318,7 @@ public class Contratar_ServicioFragmento extends Fragment {
                 String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
 
 
-                String url = "http://3.145.140.134:9090/api/peluqueria/servicio";
+                String url = webServicio.dominio_servicio+ "api/peluqueria/servicio";
 
                 JSONObject jsonobject = new JSONObject();
                 try {

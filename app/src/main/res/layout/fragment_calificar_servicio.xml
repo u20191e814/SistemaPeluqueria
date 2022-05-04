@@ -9,7 +9,7 @@
     tools:context=".ui.CalificarServicioFragment" >
 
     <RatingBar
-        android:id="@+id/ratingBar"
+        android:id="@+id/ratingBarCalificacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -28,15 +28,16 @@
         android:text="Comentario:" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/txtComentarioCalificacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:minHeight="48dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnEnviarCalificacion"
         android:layout_width="212dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="70dp"

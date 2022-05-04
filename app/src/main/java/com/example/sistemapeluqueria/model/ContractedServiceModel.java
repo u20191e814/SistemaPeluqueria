@@ -11,8 +11,9 @@ public class ContractedServiceModel {
     private String estado;
     private double precio;
     private int cantidad;
+    private int calificacion;
 
-    public ContractedServiceModel(int pk_ContratarServicio, String nombrePersonal, String nombreServicio, double total, String direccion, String fecha, String hora, String estado,double precio,int cantidad) {
+    public ContractedServiceModel(int pk_ContratarServicio, String nombrePersonal, String nombreServicio, double total, String direccion, String fecha, String hora, String estado,double precio,int cantidad,int calificacion) {
         this.pk_ContratarServicio = pk_ContratarServicio;
         this.nombrePersonal = nombrePersonal;
         this.nombreServicio = nombreServicio;
@@ -23,6 +24,15 @@ public class ContractedServiceModel {
         this.estado = estado;
         this.precio = precio;
         this.cantidad = cantidad;
+        this.calificacion= calificacion;
+    }
+
+    public int getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(int calificacion) {
+        this.calificacion = calificacion;
     }
 
     public int getPk_ContratarServicio() {

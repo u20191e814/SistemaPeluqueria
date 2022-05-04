@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginLeft="20dp"
     android:layout_marginRight="20dp"
-    tools:context=".ui.CancelarServicioFragment">
+    tools:context=".ui.ActualizarServicioFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,234 +14,229 @@
 
         <EditText
             android:id="@+id/editEstadoCancelar"
-            android:layout_width="175dp"
-            android:layout_height="50dp"
+            android:layout_width="215dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="87dp"
+            android:layout_marginEnd="9dp"
             android:autofillHints=""
             android:ems="10"
+            android:enabled="false"
+            android:textColor="@color/black"
             android:hint="@string/pendiente"
             android:inputType="textPersonName"
             android:textAlignment="center"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.806"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.591" />
+            app:layout_constraintStart_toEndOf="@+id/textView40"
+            app:layout_constraintTop_toBottomOf="@+id/editDireccionCancelar" />
 
         <EditText
             android:id="@+id/editDireccionCancelar"
-            android:layout_width="171dp"
+            android:layout_width="215dp"
             android:layout_height="48dp"
+            android:layout_marginStart="31dp"
+            android:layout_marginEnd="9dp"
             android:autofillHints=""
             android:ems="10"
+            android:enabled="false"
+            android:textColor="@color/black"
             android:hint="@string/villa_los_angeles"
             android:inputType="textPersonName"
             android:textAlignment="center"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.79"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.519" />
+            app:layout_constraintStart_toEndOf="@+id/textView39"
+            app:layout_constraintTop_toBottomOf="@+id/editHoraCancelar" />
 
         <TextView
             android:id="@+id/textView39"
             android:layout_width="100dp"
             android:layout_height="20dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
             android:text="@string/direccion"
+
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.517" />
+            app:layout_constraintTop_toBottomOf="@+id/textView38" />
 
         <EditText
             android:id="@+id/editHoraCancelar"
-            android:layout_width="170dp"
-            android:layout_height="48dp"
+            android:layout_width="211dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="12dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/_14_30"
+            android:textColor="@color/black"
+            android:enabled="false"
             android:inputType="time"
             android:textAlignment="center"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.786"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.449" />
+            app:layout_constraintStart_toEndOf="@+id/textView38"
+            app:layout_constraintTop_toBottomOf="@+id/editFechaCancelar" />
 
         <TextView
             android:id="@+id/textView38"
             android:layout_width="100dp"
             android:layout_height="23dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
             android:text="@string/hora"
+
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.447" />
+            app:layout_constraintTop_toBottomOf="@+id/textView37" />
 
         <EditText
             android:id="@+id/editFechaCancelar"
-            android:layout_width="170dp"
+            android:layout_width="213dp"
             android:layout_height="48dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="10dp"
             android:autofillHints=""
             android:ems="10"
+            android:textColor="@color/black"
             android:hint="@string/_2022_08_08"
+            android:enabled="false"
             android:inputType="date"
             android:textAlignment="center"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.748"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.379" />
+            app:layout_constraintStart_toEndOf="@+id/textView37"
+            app:layout_constraintTop_toBottomOf="@+id/editTotalCancelar" />
 
         <TextView
             android:id="@+id/textView37"
             android:layout_width="100dp"
             android:layout_height="23dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
             android:text="@string/fecha"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.379" />
+            app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
         <EditText
             android:id="@+id/editTotalCancelar"
-            android:layout_width="170dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="28dp"
+            android:layout_width="209dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="14dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/_100"
+            android:enabled="false"
+            android:textColor="@color/black"
             android:inputType="number"
             android:textAlignment="center"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.751"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.308"
+            app:layout_constraintStart_toEndOf="@+id/textView36"
+            app:layout_constraintTop_toBottomOf="@+id/editCantidadCancelar"
             tools:ignore="DuplicateSpeakableTextCheck" />
 
         <TextView
             android:id="@+id/textView36"
             android:layout_width="100dp"
             android:layout_height="23dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="27dp"
             android:text="@string/total"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.316" />
+            app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
         <EditText
             android:id="@+id/editCantidadCancelar"
-            android:layout_width="170dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="30dp"
+            android:layout_width="208dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="15dp"
             android:autofillHints=""
             android:ems="10"
+            android:textColor="@color/black"
             android:hint="@string/_1"
+            android:enabled="false"
             android:inputType="number"
             android:textAlignment="center"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.748"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.238" />
+            app:layout_constraintStart_toEndOf="@+id/textView35"
+            app:layout_constraintTop_toBottomOf="@+id/editPrecioCancelar" />
 
         <TextView
             android:id="@+id/textView35"
             android:layout_width="100dp"
             android:layout_height="23dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="26dp"
             android:text="@string/cantidad"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.245" />
+            app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
         <EditText
             android:id="@+id/editNombreServicioCancelar"
-            android:layout_width="175dp"
-            android:layout_height="50dp"
+            android:layout_width="216dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="12dp"
             android:autofillHints=""
             android:ems="10"
+            android:textColor="@color/black"
+            android:enabled="false"
             android:hint="@string/peinado_matrimonial"
             android:inputType="textPersonName"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.806"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.092" />
+            app:layout_constraintStart_toEndOf="@+id/textView31"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombreEspecialistaCancelar" />
 
         <EditText
             android:id="@+id/editPrecioCancelar"
-            android:layout_width="170dp"
+            android:layout_width="211dp"
             android:layout_height="48dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="12dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/_100"
+            android:enabled="false"
+            android:textColor="@color/black"
             android:inputType="number"
             android:textAlignment="center"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.748"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.165" />
+            app:layout_constraintStart_toEndOf="@+id/textView33"
+            app:layout_constraintTop_toBottomOf="@+id/editNombreServicioCancelar" />
 
         <TextView
             android:id="@+id/textView33"
             android:layout_width="100dp"
             android:layout_height="23dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="31dp"
             android:text="@string/precio"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.176" />
+            app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
         <TextView
             android:id="@+id/textView31"
             android:layout_width="103dp"
             android:layout_height="22dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
             android:hint="@string/servicio_contratado"
             android:textColorHint="#757575"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.102" />
+            app:layout_constraintTop_toBottomOf="@+id/txtNombreEspecialistaCancelar" />
 
         <TextView
             android:id="@+id/txtNombreEspecialistaCancelar"
@@ -249,6 +244,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/jessica_ramirez"
+            android:textColor="@color/black"
+            android:enabled="false"
             android:textAlignment="center"
             android:textSize="9pt"
             android:textStyle="bold"
@@ -261,57 +258,52 @@
             android:id="@+id/textView40"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
             android:hint="@string/estados"
             android:textColorHint="#757575"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.584" />
+            app:layout_constraintTop_toBottomOf="@+id/textView39" />
 
         <Button
             android:id="@+id/btnCancelarServicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="129dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="128dp"
+            android:layout_marginBottom="65dp"
             android:backgroundTint="@color/estadoCancelado"
-            android:text="Cancelar Servicio"
+            android:text="Cancelar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.483"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.808" />
+            app:layout_constraintTop_toBottomOf="@+id/btnCompletarServicio" />
 
         <TextView
             android:id="@+id/textView34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="Si cancela el servicio la devolución del pago será previa coordinacion con el personal contratado."
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.693" />
+            app:layout_constraintTop_toBottomOf="@+id/editEstadoCancelar" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnCompletarServicio"
             android:layout_width="193dp"
             android:layout_height="50dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="62dp"
+            android:layout_marginStart="89dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="89dp"
             android:backgroundTint="@color/estadoCompletado"
             android:text="Completar"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnCancelarServicio"
-            app:layout_constraintVertical_bias="0.615" />
+            app:layout_constraintTop_toBottomOf="@+id/textView34" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

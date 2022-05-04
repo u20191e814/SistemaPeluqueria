@@ -1,59 +1,50 @@
 package com.example.sistemapeluqueria.ui;
 
+import android.media.Rating;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RatingBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.sistemapeluqueria.R;
+import com.example.sistemapeluqueria.controladores.webServicio;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CalificarServicioFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
+
+
 public class CalificarServicioFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
-    public CalificarServicioFragment() {
-        // Required empty public constructor
-    }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CalificarServicioFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CalificarServicioFragment newInstance(String param1, String param2) {
-        CalificarServicioFragment fragment = new CalificarServicioFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+
+    private int Pk_servicio ;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            Pk_servicio = getArguments().getInt("Pk_servicio");
+
         }
     }
 
@@ -61,7 +52,79 @@ public class CalificarServicioFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calificar_servicio, container, false);
+        View v = inflater.inflate(R.layout.fragment_calificar_servicio, container, false);
+        RatingBar rating = v.findViewById(R.id.ratingBarCalificacion);
+        TextView comentario = v.findViewById(R.id.txtComentarioCalificacion);
+        Button btnEnviarCalificacion = v.findViewById(R.id.btnEnviarCalificacion);
+
+        btnEnviarCalificacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (rating==null ){
+                    Toast.makeText(getContext(), "Debe elegir una calificación ", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                float ratting= rating.getRating();
+                int cantidad = (int)(ratting);
+                if (cantidad==0){
+                    Toast.makeText(getContext(), "La cantidad no puede ser 0", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String url = webServicio.dominio_servicio+ "api/peluqueria/rateService";
+
+                JSONObject jsonobject = new JSONObject();
+                try {
+
+                    jsonobject.put("id_service", Pk_servicio);
+                    jsonobject.put("calificacion", cantidad);
+                    jsonobject.put("comentario", comentario.getText().toString());
+
+                } catch (JSONException e) {
+                    Log.i("errorjon======>", e.getMessage());
+                }
+
+                JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
+                        url, jsonobject,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+
+                                try {
+                                    JSONObject obj = new JSONObject(response.toString());
+                                    boolean data = obj.getBoolean("data");
+                                    if (data == false){
+                                        Toast.makeText(getContext(), "No se pudo registrar la calificación", Toast.LENGTH_LONG).show();
+                                    }
+                                    if (data ){
+                                        Toast.makeText(getContext(), "Se registró la calificación", Toast.LENGTH_LONG).show();
+                                        NavController nav = Navigation.findNavController(view);
+                                        nav.navigate(R.id.nav_servicioscontratados);
+                                    }
+
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(getContext(), "Server error", Toast.LENGTH_SHORT).show();
+                                Log.i("error======>", error.getMessage());
+                            }
+                        }
+                );
+
+                RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+                requestQueue.add(jsonObjReq);
+
+
+            }
+        });
+
+        return  v;
     }
 
     @Override

@@ -8,9 +8,9 @@
 
     <fragment
         android:id="@+id/navCancelarServicio"
-        android:name="com.example.sistemapeluqueria.ui.CancelarServicioFragment"
-        android:label="Cancelar Servicio"
-        tools:layout="@layout/fragment_cancelar_servicio"
+        android:name="com.example.sistemapeluqueria.ui.ActualizarServicioFragment"
+        android:label="Actualizar Servicio"
+        tools:layout="@layout/fragment_actualizar_servicio"
         />
 
     <fragment

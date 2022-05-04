@@ -19,16 +19,9 @@
             />
 
         <item
-            android:id="@+id/navCancelarServicio"
-            android:title="Cancelar Servicio"
-            />
-        <item
-            android:id="@+id/navCalificarServicio"
-            android:title="Calificar Servicio"
-            />
-        <item
             android:id="@+id/navcerrarsesion"
-            android:title="Cerrar Sesión"
-            />
+            android:icon="@drawable/common_full_open_on_phone"
+
+            android:title="Cerrar Sesión" />
     </group>
 </menu>

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
@@ -46,6 +47,7 @@ public class MostrarServicioContratadoAdapter extends RecyclerView.Adapter<Mostr
         int pk_ContratarServicio = listaServicioContratado.get(position).getPk_ContratarServicio();
         double precio = listaServicioContratado.get(position).getPrecio();
         int cantidad = listaServicioContratado.get(position).getCantidad();
+        int ratingc = listaServicioContratado.get(position).getCalificacion();
 
 
         holder.nombrePersonal.setText(nombrePersonal);
@@ -56,6 +58,7 @@ public class MostrarServicioContratadoAdapter extends RecyclerView.Adapter<Mostr
         holder.hora.setText(hora);
         holder.estado.setText(estado);
         if (estado.equals("Pendiente")) {
+            holder.calificaci.setVisibility(View.INVISIBLE);
             holder.estado.setTextColor(Color.parseColor("#6A6A6A"));
             holder.itemView.setOnClickListener(v->{
                 Bundle b = new Bundle();
@@ -74,9 +77,12 @@ public class MostrarServicioContratadoAdapter extends RecyclerView.Adapter<Mostr
             });
         }
         if (estado.equals("Cancelado")) {
+            holder.calificaci.setVisibility(View.INVISIBLE);
             holder.estado.setTextColor(Color.parseColor("#EF0E13"));
         }
         if (estado.equals("Completado")) {
+            holder.calificaci.setVisibility(View.VISIBLE);
+            holder.calificaci.setRating(ratingc);
             holder.estado.setTextColor(Color.parseColor("#34A90D"));
         }
     }
@@ -94,6 +100,7 @@ public class MostrarServicioContratadoAdapter extends RecyclerView.Adapter<Mostr
         private final TextView fecha;
         private final TextView hora;
         private final TextView estado;
+        private final RatingBar calificaci;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -104,6 +111,7 @@ public class MostrarServicioContratadoAdapter extends RecyclerView.Adapter<Mostr
             fecha = itemView.findViewById(R.id.txtFechaServicioContratado);
             hora = itemView.findViewById(R.id.txtHoraMostrarServicioContratado);
             estado = itemView.findViewById(R.id.txtEstadoServicioContratado);
+            calificaci= itemView.findViewById(R.id.ratingBarserviciosCompletados);
         }
 
 
