@@ -102,5 +102,7 @@ public class MostrarServicioContratadoAdapter extends RecyclerView.Adapter<Mostr
             estado = itemView.findViewById(R.id.txtEstadoServicioContratado);
         }
 
+
+
     }
 }

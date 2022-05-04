@@ -22,7 +22,7 @@
     <fragment
         android:id="@+id/nav_servicioscontratados"
         android:name="com.example.sistemapeluqueria.ui.MostrarServicioContratadoFragment"
-        android:label="Mostrar Servicios Contratados"
+        android:label="Servicios Contratados"
         tools:layout="@layout/fragment_mostrar_servicio_contratado"
         />
 
